@@ -19,7 +19,9 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.1",
+    "styled-normalize": "^8.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -122,6 +124,20 @@
             "render"
           ]
         }
+      ],
+      "no-restricted-imports": [
+        "error",
+        {
+          "paths": [
+            {
+              "name": "styled-components",
+              "message": "Please import from styled-components/macro."
+            }
+          ],
+          "patterns": [
+            "!styled-components/macro"
+          ]
+        }
       ]
     }
   },
@@ -138,6 +154,7 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-macros": "^2.6.1",
     "eslint-config-prettier": "^6.5.0",
     "eslint-config-standard-react": "^9.2.0",
     "eslint-plugin-node": "^10.0.0",

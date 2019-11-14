@@ -1,13 +1,23 @@
+//react
 import React from "react";
-import "pages/App/App.css";
+//assets
+import styled from "styled-components/macro";
 
-function App() {
+const Test = styled.div`
+  background-color: rebeccapurple;
+  width: 100px;
+  height: 100px;
+`;
+
+function Index() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <Test />
+      <header>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <a href="/">dddddddddddddddddd</a>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -21,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export default Index;
