@@ -1,6 +1,6 @@
 /* ***colors*** */
 
-export const color = {
+export const colors = {
   lightPurple: "#5E239D",
   violet: "#3A0475",
   saturatedPurple: "#30124E",
@@ -26,30 +26,41 @@ export const color = {
 
 /* ***headers h1 h2 h3 h4 h5 h6*** */
 
+const defaultStyles = {
+  fontWeight: 500,
+};
+
 export const headers = {
-  h1: { fontWeight: 900, fontSize: "99px", lineHeight: "118px" },
+  h1: {
+    ...defaultStyles,
+    margin: "0.3em 0",
+    fontWeight: 900,
+    fontSize: "99px",
+    lineHeight: "118px",
+  },
   h2: {
-    fontWeight: 500,
+    ...defaultStyles,
     fontSize: "54px",
     lineHeight: "80px",
   },
   h3: {
-    fontWeight: 500,
+    ...defaultStyles,
+    margin: "0.3em 0",
     fontSize: "45px",
     lineHeight: "67px",
   },
   h4: {
-    fontWeight: 500,
+    ...defaultStyles,
     fontSize: "36px",
     lineHeight: "53px",
   },
   h5: {
-    fontWeight: 500,
+    ...defaultStyles,
     fontSize: "27px",
     lineHeight: "40px",
   },
   h6: {
-    fontWeight: 500,
+    ...defaultStyles,
     fontSize: "18px",
     lineHeight: "27px",
   },
@@ -103,6 +114,12 @@ export const text = {
 /* ***text misc*** */
 
 export const textMisc = {
+  logo: {
+    fontWeight: "900",
+    fontSize: "24px",
+    lineHeight: "43px",
+    letterSpacing: "2px",
+  },
   titleLarge: {
     fontWeight: 800,
     fontSize: "18px",
@@ -129,7 +146,6 @@ export const textMisc = {
     fontSize: "14.4px",
     lineHeight: "30px",
     letterSpacing: "2px",
-    textTransform: "uppercase",
   },
   navFooter: {
     fontWeight: "bold",

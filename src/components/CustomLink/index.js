@@ -4,41 +4,13 @@ import PropTypes from "prop-types";
 //router
 import { Link, NavLink } from "react-router-dom";
 //assets
-import styled from "styled-components/macro";
+import { S } from "components/CustomLink/styles";
+import phoneIcon from "assets/img/phoneIcon.svg";
 
-const S = {};
-
-S.Container = styled.div(
-  ({ color, linkStyles, activeLinkStyles, hasActiveClass }) => ({
-    backgroundColor: "transparent",
-
-    a: {
-      padding: "5px",
-      position: "relative",
-      color: color || "white",
-      textDecoration: "none",
-      ...linkStyles,
-    },
-
-    "& a.active": hasActiveClass && {
-      ...activeLinkStyles,
-      "::before": {
-        content: "''",
-        width: "60%",
-        height: "2px",
-        backgroundColor: color || "white",
-        position: "absolute",
-        bottom: "-20%",
-        left: "50%",
-        transform: "translateX(-50%)",
-      },
-    },
-  }),
-);
-
-const Link = ({
+const CustomLink = ({
   children,
   color,
+  width,
   linkStyles,
   activeLinkStyles,
   tel,
@@ -49,7 +21,9 @@ const Link = ({
 }) => (
   <S.Container
     color={color}
+    width={width}
     linkStyles={linkStyles}
+    icon={tel || mail}
     activeLinkStyles={activeLinkStyles}
     hasActiveClass={hasActiveClass}
   >
@@ -60,14 +34,23 @@ const Link = ({
     ) : !tel && !mail ? (
       <Link {...rest}>{children}</Link>
     ) : (
-      <a href={tel ? `tel:${tel}` : `mailto:${mail}`}>{tel || mail}</a>
+      <>
+        <a href={tel ? `tel:${tel}` : `mailto:${mail}`}>
+          <img
+            src={tel ? phoneIcon : phoneIcon}
+            alt={`${tel ? "phone" : "mail"} icon`}
+          />{" "}
+          {tel || mail}
+        </a>
+      </>
     )}
   </S.Container>
 );
 
-Link.propTypes = {
+CustomLink.propTypes = {
   children: PropTypes.string,
   color: PropTypes.string,
+  width: PropTypes.number,
   linkStyles: PropTypes.object,
   activeLinkStyles: PropTypes.object,
   tel: PropTypes.string,
@@ -76,4 +59,4 @@ Link.propTypes = {
   navLink: PropTypes.bool,
 };
 
-export default Link;
+export default CustomLink;
