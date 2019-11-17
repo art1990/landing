@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/landing/static/js/main.ac4d2577.chunk.js",
-    "main.js.map": "/landing/static/js/main.ac4d2577.chunk.js.map",
+    "main.js": "/landing/static/js/main.8ea72b5b.chunk.js",
+    "main.js.map": "/landing/static/js/main.8ea72b5b.chunk.js.map",
     "runtime-main.js": "/landing/static/js/runtime-main.b02d1db6.js",
     "runtime-main.js.map": "/landing/static/js/runtime-main.b02d1db6.js.map",
     "static/js/2.aa6a5211.chunk.js": "/landing/static/js/2.aa6a5211.chunk.js",
     "static/js/2.aa6a5211.chunk.js.map": "/landing/static/js/2.aa6a5211.chunk.js.map",
     "index.html": "/landing/index.html",
-    "precache-manifest.cedfbad55853c442af4639dd5d468235.js": "/landing/precache-manifest.cedfbad55853c442af4639dd5d468235.js",
+    "precache-manifest.f371a66ee1beb8bc1a4e1c8c90b6ba9b.js": "/landing/precache-manifest.f371a66ee1beb8bc1a4e1c8c90b6ba9b.js",
     "service-worker.js": "/landing/service-worker.js",
     "static/media/benefitsApartament.svg": "/landing/static/media/benefitsApartament.d383b596.svg",
     "static/media/benefitsHome.svg": "/landing/static/media/benefitsHome.0fb7354f.svg",
@@ -21,6 +21,6 @@
   "entrypoints": [
     "static/js/runtime-main.b02d1db6.js",
     "static/js/2.aa6a5211.chunk.js",
-    "static/js/main.ac4d2577.chunk.js"
+    "static/js/main.8ea72b5b.chunk.js"
   ]
 }
