@@ -5,11 +5,11 @@ import PropTypes from "prop-types";
 import PageHeader from "sections/PageHeader";
 import OurServices from "sections/OurServices";
 //utils
-import { data } from "pages/Home/utils/data";
+import { articles, quote } from "pages/Home/utils/data";
 //assets
 import styled from "styled-components/macro";
-import header from "pages/Home/assets/img/header.svg";
 import { headers, textMisc, colors } from "assets/styles/utils/vars";
+import photo from "pages/Home/assets/img/photoAndrei.svg";
 
 const S = {};
 
@@ -34,7 +34,13 @@ const Home = () => {
   return (
     <>
       <PageHeader title={title} heading={heading} />
-      <OurServices articles={data} />
+      <OurServices
+        title="What we can do?"
+        heading="Our services"
+        articles={articles}
+        quote={{ ...quote, photo }}
+        paddingTop={180}
+      />
     </>
   );
 };

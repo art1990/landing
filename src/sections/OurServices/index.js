@@ -5,12 +5,18 @@ import PropTypes from "prop-types";
 import ServiceArticle from "pages/App/components/ServiceArticle";
 //assets
 import styled from "styled-components/macro";
-import { textMisc, colors, headers } from "assets/styles/utils/vars";
+import {
+  textMisc,
+  colors,
+  headers,
+  quote,
+  text,
+} from "assets/styles/utils/vars";
 
 const S = {};
 
-S.Container = styled.div(() => ({
-  paddingTop: "180px",
+S.Container = styled.div(({ paddingTop }) => ({
+  paddingTop: paddingTop + "px",
   maxWidth: "1175px",
   margin: "0 auto",
 }));
@@ -24,24 +30,71 @@ S.Heading = styled.h3({
 S.ServicesContainer = styled.div({
   display: "grid",
   gridTemplateRows: "repeat(2, 1fr)",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gridColumnGap: "74px",
-  gridRowGap: "64px",
+  gridTemplateColumns: "repeat(3, 26%)",
+  gridColumnGap: "85px",
+  gridRowGap: "65px",
   alignItems: "start",
 });
 
-const OurServices = ({ title, heading, text, articles }) => {
+S.QuoteContainer = styled.figure({
+  position: "relative",
+  zIndex: "0",
+  margin: "120px 0 0 0",
+  display: "flex",
+  flexDirection: "column",
+  blockquote: {
+    ...quote.small,
+    margin: "0",
+    padding: "75px 200px 75px 100px",
+    maxWidth: "715px",
+    color: colors.white,
+    backgroundColor: colors.lightPurple,
+  },
+  img: {
+    position: "absolute",
+    right: "2%",
+    top: "-45%",
+  },
+  figcaption: {
+    ...text.regularBold,
+    color: colors.primary,
+    padding: "55px 0 0 100px",
+    span: {
+      ...text.regular,
+      color: colors.textHeaders,
+    },
+  },
+});
+
+const OurServices = ({
+  title,
+  heading,
+  text,
+  articles,
+  quote = {},
+  paddingTop,
+}) => {
+  const { quoteText, photo, autor, company } = quote;
+
   return (
-    <S.Container>
-      <S.Title>What we can do?</S.Title>
-      <S.Heading>Our services</S.Heading>
+    <S.Container paddingTop={paddingTop}>
+      <S.Title>{title}</S.Title>
+      <S.Heading>{heading}</S.Heading>
       {/*<S.Text></S.Text>*/}
       <S.ServicesContainer>
         {articles.map(({ heading, article }, i) => (
           <ServiceArticle key={i} heading={heading} article={article} />
         ))}
       </S.ServicesContainer>
-      {/*<S.Content>gg</S.Content>*/}
+      {quote && (
+        <S.QuoteContainer>
+          <blockquote>{quoteText}</blockquote>
+          <img src={photo} alt="photo autor" />
+          <figcaption>
+            {autor} - <span>{company}</span>
+          </figcaption>
+        </S.QuoteContainer>
+      )}
     </S.Container>
   );
 };
@@ -51,6 +104,8 @@ OurServices.propTypes = {
   heading: PropTypes.string,
   text: PropTypes.string,
   articles: PropTypes.array,
+  quote: PropTypes.object,
+  paddingTop: PropTypes.number,
 };
 
 export default OurServices;

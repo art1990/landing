@@ -12,8 +12,8 @@ S.Container = styled.div(({ color, width }) => ({
   flexDirection: "column",
   justifyContent: "space-between",
   alignItems: "center",
-  color: color || "white",
   width: width + "px" || "auto",
+  "& a": { color: color || "white" },
   span: {
     padding: "5px",
   },

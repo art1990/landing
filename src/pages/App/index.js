@@ -10,17 +10,18 @@ import Team from "pages/Team";
 import Header from "pages/App/Header";
 //assets
 import styled from "styled-components/macro";
-import { textMisc } from "assets/styles/utils/vars";
+import { textMisc, colors } from "assets/styles/utils/vars";
 
 const App = props => {
   return (
     <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
       <Route
         path="/"
-        render={({ location }) => {
+        render={({ location: { pathname } }) => {
           return (
             <Header
-              color={location.pathname !== "/" ? "black" : undefined}
+              color={pathname !== "/" ? colors.textHeaders : undefined}
+              logoColor={pathname !== "/" ? colors.violet : undefined}
               logo="Lopper"
               tel="(01) 666 - 693 - 456"
               linkStyles={textMisc.navHeader}
