@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 //sections
 import PageHeader from "sections/PageHeader";
 import OurServices from "sections/OurServices";
+import Benefits from "sections/Benefits";
 //utils
-import { articles, quote } from "pages/Home/utils/data";
+import { articles, quote, benefits } from "pages/Home/utils/data";
 //assets
 import styled from "styled-components/macro";
 import { headers, textMisc, colors } from "assets/styles/utils/vars";
@@ -40,6 +41,12 @@ const Home = () => {
         articles={articles}
         quote={{ ...quote, photo }}
         paddingTop={180}
+      />
+      <Benefits
+        title="Benefits"
+        heading="Shaping the future"
+        text={benefits.text}
+        imgArr={benefits.imgArr}
       />
     </>
   );

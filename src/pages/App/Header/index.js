@@ -74,7 +74,7 @@ const Header = ({
   );
 
   return (
-    <S.Container backgroundColor={isScrolling && colors.white}>
+    <S.Container backgroundColor={isScrolling && colors.lightGrey}>
       <NavigationPanel>
         <CustomLink
           color={(isScrolling && colors.violet) || logoColor}
