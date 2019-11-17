@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.js": "/landing/static/js/main.ac4d2577.chunk.js",
+    "main.js.map": "/landing/static/js/main.ac4d2577.chunk.js.map",
+    "runtime-main.js": "/landing/static/js/runtime-main.b02d1db6.js",
+    "runtime-main.js.map": "/landing/static/js/runtime-main.b02d1db6.js.map",
+    "static/js/2.aa6a5211.chunk.js": "/landing/static/js/2.aa6a5211.chunk.js",
+    "static/js/2.aa6a5211.chunk.js.map": "/landing/static/js/2.aa6a5211.chunk.js.map",
+    "index.html": "/landing/index.html",
+    "precache-manifest.cedfbad55853c442af4639dd5d468235.js": "/landing/precache-manifest.cedfbad55853c442af4639dd5d468235.js",
+    "service-worker.js": "/landing/service-worker.js",
+    "static/media/benefitsApartament.svg": "/landing/static/media/benefitsApartament.d383b596.svg",
+    "static/media/benefitsHome.svg": "/landing/static/media/benefitsHome.0fb7354f.svg",
+    "static/media/codepen.svg": "/landing/static/media/codepen.abea118f.svg",
+    "static/media/dribbble.svg": "/landing/static/media/dribbble.612daa93.svg",
+    "static/media/header.svg": "/landing/static/media/header.286fe2b3.svg",
+    "static/media/phoneIcon.svg": "/landing/static/media/phoneIcon.ffac21a0.svg",
+    "static/media/photoAndrei.svg": "/landing/static/media/photoAndrei.c275e827.svg",
+    "static/media/reactIcon.svg": "/landing/static/media/reactIcon.f5b5add6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b02d1db6.js",
+    "static/js/2.aa6a5211.chunk.js",
+    "static/js/main.ac4d2577.chunk.js"
+  ]
+}
