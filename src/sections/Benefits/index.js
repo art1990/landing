@@ -1,29 +1,19 @@
 //react
 import React from "react";
 import PropTypes from "prop-types";
+//components
+import TextList from "components/TextList";
 //assets
 import { S } from "sections/Benefits/styles";
 
 const Benefits = ({ title, heading, text = {}, imgArr }) => {
-  const { regularBold, regular } = text;
+  const { regularBold, list } = text;
 
   return (
     <S.Container>
       <S.TextSection>
-        <S.Title>{title}</S.Title>
-        <h3>{heading}</h3>
-        <S.RegularBold>{regularBold}</S.RegularBold>
-        <div>
-          {regular &&
-            regular.map((elem, i, arr) => (
-              <React.Fragment key={`container${i}`}>
-                <p style={{}} key={i}>
-                  {elem}
-                </p>
-                {i + 1 !== arr.length && <p key={`empty${i}`} />}
-              </React.Fragment>
-            ))}
-        </div>
+        <S.Title title={title} heading={heading} text={regularBold} />
+        <TextList listArr={list} />
         <S.Button>learn more</S.Button>
       </S.TextSection>
       <S.PhotoSection>
@@ -36,7 +26,7 @@ const Benefits = ({ title, heading, text = {}, imgArr }) => {
 
 Benefits.propTypes = {
   title: PropTypes.string,
-  heading: PropTypes.string,
+  heading: PropTypes.object,
   text: PropTypes.object,
   imgArr: PropTypes.array,
 };

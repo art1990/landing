@@ -1,16 +1,21 @@
 //react
 import React from "react";
 import PropTypes from "prop-types";
+//components
+import ImageLink from "components/ImageLink";
 //sections
 import PageHeader from "sections/PageHeader";
 import OurServices from "sections/OurServices";
 import Benefits from "sections/Benefits";
+import WhatWeDo from "sections/WhatWeDo";
 //utils
 import { articles, quote, benefits } from "pages/Home/utils/data";
 //assets
 import styled from "styled-components/macro";
 import { headers, textMisc, colors } from "assets/styles/utils/vars";
 import photo from "pages/Home/assets/img/photoAndrei.svg";
+import codepen from "pages/Home/assets/img/codepen.svg";
+import dribbble from "pages/Home/assets/img/dribbble.svg";
 
 const S = {};
 
@@ -22,6 +27,12 @@ S.Heading = styled.h1({
     color: colors.primary,
   },
 });
+
+const imgLinkArr = new Array(6)
+  .fill(0)
+  .map((elem, i) => (
+    <ImageLink key={i} img={i % 2 ? dribbble : codepen} link="/" />
+  ));
 
 const Home = () => {
   const title = <div style={textMisc.titleMedium}>What we do?</div>;
@@ -37,16 +48,27 @@ const Home = () => {
       <PageHeader title={title} heading={heading} />
       <OurServices
         title="What we can do?"
-        heading="Our services"
+        heading={<h3>Our services</h3>}
         articles={articles}
         quote={{ ...quote, photo }}
-        paddingTop={180}
+        paddingTop={170}
       />
       <Benefits
         title="Benefits"
-        heading="Shaping the future"
+        heading={<h3>Shaping the future</h3>}
         text={benefits.text}
         imgArr={benefits.imgArr}
+      />
+      <WhatWeDo
+        title="What we do"
+        heading={
+          <h3>
+            What we do more than you can <br /> imangine, belive us.
+          </h3>
+        }
+        sectionListHeading={<h4>We build great business</h4>}
+        sectionClientsTitle="Our clients"
+        imgLinkArr={imgLinkArr}
       />
     </>
   );

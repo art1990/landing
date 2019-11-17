@@ -3,15 +3,10 @@ import React from "react";
 import PropTypes from "prop-types";
 //components
 import ServiceArticle from "pages/App/components/ServiceArticle";
+import Title from "components/Title";
 //assets
 import styled from "styled-components/macro";
-import {
-  textMisc,
-  colors,
-  headers,
-  quote,
-  text,
-} from "assets/styles/utils/vars";
+import { colors, quote, text } from "assets/styles/utils/vars";
 
 const S = {};
 
@@ -19,13 +14,8 @@ S.Container = styled.div(({ paddingTop }) => ({
   paddingTop: paddingTop + "px",
   maxWidth: "1175px",
   margin: "0 auto",
+  color: colors.textHeaders,
 }));
-
-S.Title = styled.div({ ...textMisc.titleMedium, color: colors.primary });
-
-S.Heading = styled.h3({
-  ...headers.h3,
-});
 
 S.ServicesContainer = styled.div({
   display: "grid",
@@ -34,6 +24,10 @@ S.ServicesContainer = styled.div({
   gridColumnGap: "85px",
   gridRowGap: "65px",
   alignItems: "start",
+});
+
+S.Title = styled(Title)({
+  marginBottom: "55px",
 });
 
 S.QuoteContainer = styled.figure({
@@ -78,8 +72,7 @@ const OurServices = ({
 
   return (
     <S.Container paddingTop={paddingTop}>
-      <S.Title>{title}</S.Title>
-      <S.Heading>{heading}</S.Heading>
+      <S.Title title={title} heading={heading} />
       {/*<S.Text></S.Text>*/}
       <S.ServicesContainer>
         {articles.map(({ heading, article }, i) => (
@@ -101,7 +94,7 @@ const OurServices = ({
 
 OurServices.propTypes = {
   title: PropTypes.string,
-  heading: PropTypes.string,
+  heading: PropTypes.object,
   text: PropTypes.string,
   articles: PropTypes.array,
   quote: PropTypes.object,

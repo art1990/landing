@@ -51,6 +51,7 @@ export const headers = {
   },
   h4: {
     ...defaultStyles,
+    margin: "0.7em 0",
     fontSize: "36px",
     lineHeight: "53px",
   },

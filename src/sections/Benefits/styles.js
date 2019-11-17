@@ -1,8 +1,9 @@
 //components
 import Button from "components/Button";
+import Title from "components/Title";
 //assets
 import styled from "styled-components/macro";
-import { colors, headers, text, textMisc } from "assets/styles/utils/vars";
+import { colors, text } from "assets/styles/utils/vars";
 
 export const S = {};
 
@@ -18,19 +19,9 @@ S.TextSection = styled.div({
   flexBasis: "50%",
   paddingRight: "125px",
   ...text.regular,
-  h3: {
-    ...headers.h3,
-  },
 });
 
-S.Title = styled.div({
-  ...textMisc.titleSmall,
-  color: colors.primary,
-});
-
-S.RegularBold = styled.span({
-  ...text.regularBold,
-  display: "inline-block",
+S.Title = styled(Title)({
   marginBottom: "70px",
 });
 
