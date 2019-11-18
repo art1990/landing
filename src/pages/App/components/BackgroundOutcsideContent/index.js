@@ -2,7 +2,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 //assets
-import { whatWeDo } from "pages/Home/utils/data";
 import styled from "styled-components/macro";
 import { colors, headers, text } from "assets/styles/utils/vars";
 import Title from "components/Title";
@@ -20,12 +19,13 @@ S.Title = styled(Title)({
   maxWidth: "1150px",
 });
 
-S.Wrapper = styled.div({
+S.Item = styled.div(({ reverse }) => ({
   display: "flex",
-});
+  flexDirection: reverse ? "row-reverse" : "row",
+}));
 
 S.SectionWithBackround = styled.div(({ background }) => ({
-  flexBasis: "43%",
+  flexBasis: "38%",
   padding: "130px 100px 145px 145px",
   background: background || "transparent",
   color: colors.white,
@@ -40,36 +40,40 @@ S.TextList = styled(TextList)({
 });
 
 S.SectionText = styled.div({
-  flexBasis: "57%",
-  paddingTop: "40px",
-  marginLeft: "125px",
+  flexBasis: "62%",
 });
 
 const BackgroundOutsideContent = ({
   title,
   heading,
-  background,
   headingSectionWithBackground,
-  children,
-}) => (
-  <S.Container>
-    <S.Title title={title} heading={heading} />
-    <S.Wrapper>
-      <S.SectionWithBackround background={background}>
-        {headingSectionWithBackground}
-        <S.TextList listArr={whatWeDo.list} />
-      </S.SectionWithBackround>
-      <S.SectionText>{children}</S.SectionText>
-    </S.Wrapper>
-  </S.Container>
-);
+  listArr,
+  itemArr,
+}) => {
+  return (
+    <S.Container>
+      <S.Title title={title} heading={heading} />
+      <div>
+        {itemArr.map(({ background, textSection }, i) => (
+          <S.Item key={i} reverse={i % 2}>
+            <S.SectionWithBackround background={background}>
+              {headingSectionWithBackground}
+              <S.TextList listArr={listArr} />
+            </S.SectionWithBackround>
+            <S.SectionText>{textSection}</S.SectionText>
+          </S.Item>
+        ))}
+      </div>
+    </S.Container>
+  );
+};
 
 BackgroundOutsideContent.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.object,
-  background: PropTypes.string,
   headingSectionWithBackground: PropTypes.object,
-  children: PropTypes.element,
+  listArr: PropTypes.array,
+  itemArr: PropTypes.array,
 };
 
 export default BackgroundOutsideContent;

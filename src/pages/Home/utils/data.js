@@ -62,10 +62,31 @@ export const benefits = {
   imgArr: [img1, img2],
 };
 
-export const whatWeDo = {
+export const clients = {
   list: [
     "Nisl condimentum id venenatis a. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Sollicitudin tempor id eu nisl nunc. ",
     "Adipiscing diam donec adipiscing tristique risus nec feugiat in fermentum. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae.",
     "Massa massa ultricies mi quis hendrerit dolor magna. Egestas dui id ornare arcu odio..",
   ],
 };
+
+export const cards = [
+  {
+    title: "01",
+    heading: "Research",
+    text:
+      "Eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Eu feugiat pretium nibh ipsum consequat nisl vel pretium. ",
+  },
+  {
+    title: "02",
+    heading: "Marketing",
+    text:
+      "Eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Eu feugiat pretium nibh ipsum consequat nisl vel pretium. ",
+  },
+  {
+    title: "03",
+    heading: "Results",
+    text:
+      "Eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Eu feugiat pretium nibh ipsum consequat nisl vel pretium. ",
+  },
+];

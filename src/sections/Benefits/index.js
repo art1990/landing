@@ -12,7 +12,7 @@ const Benefits = ({ title, heading, text = {}, imgArr }) => {
   return (
     <S.Container>
       <S.TextSection>
-        <S.Title title={title} heading={heading} text={regularBold} />
+        <S.Title title={title} heading={heading} textBold={regularBold} />
         <TextList listArr={list} />
         <S.Button>learn more</S.Button>
       </S.TextSection>

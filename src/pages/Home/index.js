@@ -8,9 +8,15 @@ import PageHeader from "sections/PageHeader";
 import OurServices from "sections/OurServices";
 import Benefits from "sections/Benefits";
 import Clients from "sections/Clients";
-import WhatWeDo from "sections/WhatWeDo";
+import WithCards from "sections/WithCards";
 //utils
-import { articles, quote, benefits } from "pages/Home/utils/data";
+import {
+  articles,
+  quote,
+  benefits,
+  clients,
+  cards,
+} from "pages/Home/utils/data";
 //assets
 import styled from "styled-components/macro";
 import { headers, textMisc, colors } from "assets/styles/utils/vars";
@@ -64,17 +70,6 @@ const Home = () => {
         text={benefits.text}
         imgArr={benefits.imgArr}
       />
-      {/*<WhatWeDo*/}
-      {/*  title="What we do"*/}
-      {/*  heading={*/}
-      {/*    <h3>*/}
-      {/*      What we do more than you can <br /> imangine, belive us.*/}
-      {/*    </h3>*/}
-      {/*  }*/}
-      {/*  sectionListHeading={<h4>We build great business</h4>}*/}
-      {/*  sectionClientsTitle="Our clients"*/}
-      {/*  imgLinkArr={imgLinkArr}*/}
-      {/*/>*/}
       <Clients
         title="What we do"
         heading={
@@ -82,10 +77,21 @@ const Home = () => {
             What we do more than you can <br /> imangine, belive us.
           </h3>
         }
-        background={colors.darkViolet}
+        background={[colors.darkViolet]}
         headingSectionWithBackground={<h4>We build great business</h4>}
         sectionClientsTitle="Our clients"
         imgLinkArr={imgLinkArr}
+        listArr={clients.list}
+      />
+      <WithCards
+        title="what we do"
+        heading={
+          <h5>
+            Apparently we had reached a great height in the atmosphere, for the
+            sky was a dead black, and the stars had ceased to twinkle.
+          </h5>
+        }
+        cards={cards}
       />
     </>
   );
