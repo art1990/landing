@@ -36,6 +36,7 @@ S.QuoteContainer = styled.figure({
   margin: "120px 0 0 0",
   display: "flex",
   flexDirection: "column",
+
   blockquote: {
     ...quote.small,
     margin: "0",
@@ -44,15 +45,18 @@ S.QuoteContainer = styled.figure({
     color: colors.white,
     backgroundColor: colors.lightPurple,
   },
+
   img: {
     position: "absolute",
     right: "2%",
     top: "-45%",
   },
+
   figcaption: {
     ...text.regularBold,
     color: colors.primary,
     padding: "55px 0 0 100px",
+
     span: {
       ...text.regular,
       color: colors.textHeaders,

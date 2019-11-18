@@ -9,10 +9,12 @@ S.Container = styled.div(
       ? {
           display: "flex",
           justifyContent: "space-between",
+
           "& a": {
             display: "flex",
             alignItems: "center",
           },
+
           "& img": {
             marginRight: "15px",
             fill: color,

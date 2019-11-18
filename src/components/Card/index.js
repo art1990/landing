@@ -5,24 +5,38 @@ import PropTypes from "prop-types";
 import Title from "components/Title";
 //assets
 import styled from "styled-components/macro";
-import { textMisc } from "assets/styles/utils/vars";
+import { colors } from "assets/styles/utils/vars";
 
 const S = {};
 
-S.Container = styled.div({});
+S.Container = styled.div(({ padding, variantRed, variant2 }) => {
+  const white = (variantRed || variant2) && colors.white;
 
-const Card = ({ title, titleColor, heading, textStyles, children }) => (
-  <S.Container>
+  return {
+    padding: padding || "70px 35px 75px 35px",
+    backgroundColor: variantRed ? colors.primary : "transparent",
+    border: variant2 ? "1px solid rgba(255, 255, 255, 0.2)" : "transparent",
+    boxSizing: "border-box",
+
+    h5: {
+      color: white || colors.textHeaders,
+      margin: "5px 0",
+    },
+
+    p: {
+      color: white || colors.textMain,
+      margin: "0",
+    },
+  };
+});
+
+const Card = ({ title, heading, padding, children, variantRed, variant2 }) => (
+  <S.Container variantRed={variantRed} variant2={variant2} padding={padding}>
     <Title
       title={title}
       heading={<h5>{heading}</h5>}
       text={children}
-      titleStyles={
-        titleColor
-          ? { ...textMisc.titleLarge, color: titleColor }
-          : textMisc.titleLarge
-      }
-      textStyles={textStyles}
+      titleStyles={variantRed && { color: colors.white }}
     />
   </S.Container>
 );
@@ -30,9 +44,10 @@ const Card = ({ title, titleColor, heading, textStyles, children }) => (
 Card.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
-  textStyles: PropTypes.object,
-  titleColor: PropTypes.string,
+  padding: PropTypes.string,
   children: PropTypes.string,
+  variantRed: PropTypes.bool,
+  variant2: PropTypes.bool,
 };
 
 export default Card;

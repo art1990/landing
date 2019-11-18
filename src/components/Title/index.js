@@ -14,6 +14,7 @@ S.Container = styled.div(({ maxWidth }) => ({
   h5: {
     ...headers.h5,
   },
+
   maxWidth: maxWidth || "auto",
 }));
 
@@ -57,7 +58,7 @@ Title.propTypes = {
   text: PropTypes.string,
   maxWidth: PropTypes.string,
   className: PropTypes.string,
-  titleStyles: PropTypes.object,
+  titleStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   textStyles: PropTypes.object,
 };
 

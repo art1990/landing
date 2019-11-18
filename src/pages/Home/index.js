@@ -30,6 +30,7 @@ S.Heading = styled.h1({
   ...headers.h1,
   display: "flex",
   flexDirection: "column",
+
   span: {
     color: colors.primary,
   },

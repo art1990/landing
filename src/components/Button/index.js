@@ -17,17 +17,20 @@ S.Button = styled.button({
   cursor: "pointer",
   border: "2px solid transparent",
   boxSizing: "border-box",
+
   "&:hover": {
     background:
       "linear-gradient(180deg, rgba(49, 2, 20, 0.25) 0%, rgba(246, 16, 103, 0) 100%), #F61067",
     backgroundBlendMode: "multiply",
     boxShadow: "0px 8px 16px rgba(246, 16, 103, 0.25)",
   },
+
   "&:active": {
     border: "2px solid rgba(94, 35, 157, 0.5)",
     boxSizing: "border-box",
     outline: "none",
   },
+
   "&:focus": {
     outline: "none",
   },

@@ -29,6 +29,7 @@ S.SectionWithBackround = styled.div(({ background }) => ({
   padding: "130px 100px 145px 145px",
   background: background || "transparent",
   color: colors.white,
+
   h4: {
     ...headers.h4,
     color: colors.primary,

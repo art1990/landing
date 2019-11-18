@@ -11,14 +11,13 @@ import { colors } from "assets/styles/utils/vars";
 const S = {};
 
 S.Container = styled.div({
+  marginTop: "-70px",
+  padding: "250px 0 305px 0",
   backgroundColor: colors.violet,
-  h5: {
-    margin: "0.3em 0",
-    color: colors.white,
-  },
-  p: {
-    color: colors.white,
-  },
+});
+
+S.Title = styled(Title)({
+  h5: { color: colors.white, margin: "0.3em 0 2em 0" },
 });
 
 S.Content = styled.div({
@@ -27,17 +26,25 @@ S.Content = styled.div({
 });
 
 S.Cards = styled.div({
-  display: "flex",
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gridColumnGap: "30px",
 });
 
 const WithCards = ({ title, heading, cards }) => (
   <S.Container>
     <S.Content>
-      <Title title={title} heading={heading} maxWidth="60%" />
+      <S.Title title={title} heading={heading} maxWidth="60%" />
       <S.Cards>
         {(Array.isArray(cards) ? cards : [cards]).map(
           ({ title, heading, text }, i) => (
-            <Card key={i} title={title} heading={heading}>
+            <Card
+              key={i}
+              title={title}
+              heading={heading}
+              variantRed={i === 0}
+              variant2={i !== 0}
+            >
               {text}
             </Card>
           ),
