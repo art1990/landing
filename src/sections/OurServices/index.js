@@ -12,7 +12,7 @@ const S = {};
 
 S.Container = styled.div(({ paddingTop }) => ({
   paddingTop: paddingTop + "px",
-  maxWidth: "1175px",
+  maxWidth: "1150px",
   margin: "0 auto",
   color: colors.textHeaders,
 }));
@@ -21,7 +21,7 @@ S.ServicesContainer = styled.div({
   display: "grid",
   gridTemplateRows: "repeat(2, 1fr)",
   gridTemplateColumns: "repeat(3, 26%)",
-  gridColumnGap: "85px",
+  gridColumnGap: "100px",
   gridRowGap: "65px",
   alignItems: "start",
 });

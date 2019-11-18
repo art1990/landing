@@ -12,8 +12,9 @@ S.Container = styled.div({
 });
 
 S.Title = styled(Title)({
-  margin: "0 0 120px 0",
+  margin: "175px auto 120px auto",
   color: colors.textHeaders,
+  maxWidth: "1150px",
 });
 
 S.Wrapper = styled.div({
@@ -21,7 +22,7 @@ S.Wrapper = styled.div({
 });
 
 S.SectionList = styled.div({
-  flexBasis: "45%",
+  flexBasis: "43%",
   padding: "130px 100px 145px 145px",
   backgroundColor: colors.darkViolet,
   color: colors.white,
@@ -36,7 +37,7 @@ S.TextList = styled(TextList)({
 });
 
 S.SectionClients = styled.div({
-  flexBasis: "55%",
+  flexBasis: "57%",
   paddingTop: "40px",
   marginLeft: "125px",
 });
@@ -49,6 +50,6 @@ S.SectionClientsTitle = styled.div({
 S.SectionClientsLinks = styled.div({
   display: "grid",
   gridTemplateRows: "repeat(3, 1fr)",
-  gridTemplateColumns: "repeat(2, 1fr)",
-  gridGap: "95px 100px",
+  gridTemplateColumns: "repeat(2, min-content)",
+  gridGap: "95px 130px",
 });

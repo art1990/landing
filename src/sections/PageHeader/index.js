@@ -18,7 +18,7 @@ S.Container = styled.div(() => ({
 }));
 
 S.Content = styled.div(() => ({
-  maxWidth: "1175px",
+  maxWidth: "1150px",
   margin: "0 auto",
 }));
 

@@ -11,7 +11,7 @@ S.Container = styled.nav(() => ({
   justifyContent: "space-between",
   alignItems: "center",
   boxSizing: "padding-box",
-  maxWidth: "1175px",
+  maxWidth: "1150px",
   margin: "0 auto",
 }));
 

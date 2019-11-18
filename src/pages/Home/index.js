@@ -7,6 +7,7 @@ import ImageLink from "components/ImageLink";
 import PageHeader from "sections/PageHeader";
 import OurServices from "sections/OurServices";
 import Benefits from "sections/Benefits";
+import Clients from "sections/Clients";
 import WhatWeDo from "sections/WhatWeDo";
 //utils
 import { articles, quote, benefits } from "pages/Home/utils/data";
@@ -31,7 +32,11 @@ S.Heading = styled.h1({
 const imgLinkArr = new Array(6)
   .fill(0)
   .map((elem, i) => (
-    <ImageLink key={i} img={i % 2 ? dribbble : codepen} link="/" />
+    <ImageLink
+      key={i}
+      img={[0, 3, 4].includes(i) ? codepen : dribbble}
+      link="/"
+    />
   ));
 
 const Home = () => {
@@ -59,14 +64,26 @@ const Home = () => {
         text={benefits.text}
         imgArr={benefits.imgArr}
       />
-      <WhatWeDo
+      {/*<WhatWeDo*/}
+      {/*  title="What we do"*/}
+      {/*  heading={*/}
+      {/*    <h3>*/}
+      {/*      What we do more than you can <br /> imangine, belive us.*/}
+      {/*    </h3>*/}
+      {/*  }*/}
+      {/*  sectionListHeading={<h4>We build great business</h4>}*/}
+      {/*  sectionClientsTitle="Our clients"*/}
+      {/*  imgLinkArr={imgLinkArr}*/}
+      {/*/>*/}
+      <Clients
         title="What we do"
         heading={
           <h3>
             What we do more than you can <br /> imangine, belive us.
           </h3>
         }
-        sectionListHeading={<h4>We build great business</h4>}
+        background={colors.darkViolet}
+        headingSectionWithBackground={<h4>We build great business</h4>}
         sectionClientsTitle="Our clients"
         imgLinkArr={imgLinkArr}
       />

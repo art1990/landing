@@ -8,7 +8,7 @@ import { colors, text } from "assets/styles/utils/vars";
 export const S = {};
 
 S.Container = styled.div({
-  maxWidth: "1175px",
+  maxWidth: "1150px",
   margin: "0 auto",
   display: "flex",
   paddingTop: "110px",
