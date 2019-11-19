@@ -40,6 +40,7 @@ S.QuoteContainer = styled(Quote)({
 
   blockquote: {
     ...quote.small,
+
     margin: "0",
     padding: "75px 200px 75px 100px",
     maxWidth: "715px",
@@ -49,31 +50,26 @@ S.QuoteContainer = styled(Quote)({
 
   img: {
     position: "absolute",
-    right: "2%",
+    right: 0,
     top: "-45%",
   },
 
   figcaption: {
     ...text.regularBold,
+
     color: colors.primary,
     padding: "55px 0 0 100px",
 
     span: {
       ...text.regular,
+
       color: colors.textHeaders,
     },
   },
 });
 
-const OurServices = ({
-  title,
-  heading,
-  text,
-  articles,
-  quote = {},
-  paddingTop,
-}) => {
-  const { quoteText, photo, author, company } = quote;
+const OurServices = ({ title, heading, articles, quote = {}, paddingTop }) => {
+  const { quoteText, photo, author, company } = quote[0];
 
   return (
     <S.Container paddingTop={paddingTop}>
@@ -99,9 +95,8 @@ const OurServices = ({
 OurServices.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.object,
-  text: PropTypes.string,
   articles: PropTypes.array,
-  quote: PropTypes.object,
+  quote: PropTypes.array,
   paddingTop: PropTypes.number,
 };
 

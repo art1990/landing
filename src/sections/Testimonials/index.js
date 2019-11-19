@@ -1,11 +1,13 @@
 //react
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import PropTypes from "prop-types";
 //components
 import IconButton from "components/IconButton";
+import Quote from "components/Quote";
 //assets
 import { S } from "sections/Testimonials/styles";
 import avatar from "pages/App/assets/img/avatar/defaultFemale.svg";
+import avatarMale from "pages/App/assets/img/avatar/defaultMale.svg";
 import av1 from "pages/App/assets/img/avatar/1.svg";
 import av2 from "pages/App/assets/img/avatar/2.svg";
 import av3 from "pages/App/assets/img/avatar/3.svg";
@@ -16,7 +18,10 @@ import av7 from "pages/App/assets/img/avatar/7.svg";
 import quotes from "pages/App/assets/img/quotes.svg";
 import { shadow } from "assets/styles/utils/vars";
 
-const Testimonials = () => {
+const Testimonials = ({ quote }) => {
+  const [quoteNum, setQuoteNum] = useState(1);
+  const { quoteText, author, company, photo } = quote[quoteNum];
+
   const avatarArr = useMemo(
     () => [
       { avatar: av1, size: 77, shadow: shadow.pink },
@@ -37,7 +42,7 @@ const Testimonials = () => {
         {avatarArr.map(({ avatar, size, shadow }, i, arr) => {
           return i === 3 ? (
             <S.GeneralAvatar key={"general" + i}>
-              <img key={i} src={avatar} alt="avatar" />
+              <img key={i} src={photo} alt="avatar" />
               <img key={"span" + i} src={quotes} alt="quotes" />
             </S.GeneralAvatar>
           ) : i === 6 ? (
@@ -57,21 +62,24 @@ const Testimonials = () => {
       </S.AvatarsSection>
       <S.QuoteContainer>
         <S.QuoteAndButtons>
-          <IconButton isIcon rotate={180} />
-          <figure>
-            <blockquote>
-              Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing
-              tristique.
-            </blockquote>
-            <figcaption></figcaption>
-          </figure>
-          <IconButton isIcon />
+          <IconButton
+            isIcon
+            rotate={180}
+            onClick={() => setQuoteNum((quoteNum - 1) % 3 || 1)}
+          />
+          <Quote quoteText={quoteText} author={author} company={company} />
+          <IconButton
+            isIcon
+            onClick={() => setQuoteNum((quoteNum + 1) % 3 || 1)}
+          />
         </S.QuoteAndButtons>
       </S.QuoteContainer>
     </S.Container>
   );
 };
 
-Testimonials.propTypes = {};
+Testimonials.propTypes = {
+  quote: PropTypes.array,
+};
 
 export default Testimonials;

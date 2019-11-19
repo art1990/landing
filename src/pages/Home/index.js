@@ -21,7 +21,6 @@ import {
 //assets
 import styled from "styled-components/macro";
 import { headers, textMisc, colors } from "assets/styles/utils/vars";
-import photo from "pages/Home/assets/img/photoAndrei.svg";
 import codepen from "pages/Home/assets/img/codepen.svg";
 import dribbble from "pages/Home/assets/img/dribbble.svg";
 
@@ -63,7 +62,7 @@ const Home = () => {
         title="What we can do?"
         heading={<h3>Our services</h3>}
         articles={articles}
-        quote={{ ...quote, photo }}
+        quote={quote}
         paddingTop={170}
       />
       <Benefits
@@ -95,7 +94,7 @@ const Home = () => {
         }
         cards={cards}
       />
-      <Testimonials />
+      <Testimonials quote={quote} />
     </>
   );
 };

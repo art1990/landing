@@ -1,11 +1,16 @@
 //react
 import styled from "styled-components/macro";
+import { colors, quote, text } from "assets/styles/utils/vars";
 
 export const S = {};
 
 S.Container = styled.div({
   display: "flex",
   flexDirection: "column",
+
+  button: {
+    height: "fit-content",
+  },
 });
 
 S.AvatarsSection = styled.div({
@@ -59,6 +64,7 @@ S.LastColumn = styled.div({
 S.GeneralAvatar = styled.div({
   display: "flex",
   flexDirection: "column",
+  marginTop: "-125px",
 
   "& :last-child": {
     position: "relative",
@@ -68,6 +74,32 @@ S.GeneralAvatar = styled.div({
 
 S.QuoteContainer = styled.div({
   display: "flex",
+  maxWidth: "1150px",
+  margin: "90px auto 0 auto",
+  textAlign: "center",
 });
 
-S.QuoteAndButtons = styled.div({});
+S.QuoteAndButtons = styled.div({
+  blockquote: {
+    ...quote.large,
+    color: colors.textHeaders,
+
+    width: "65%",
+    margin: "0 auto",
+  },
+
+  figcaption: {
+    transform: "translateY(30px)",
+    ...text.regularBold,
+    color: colors.primary,
+
+    span: {
+      ...text.regular,
+      color: colors.textHeaders,
+    },
+  },
+
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+});
