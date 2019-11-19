@@ -1,6 +1,8 @@
 //react
 import React, { useMemo } from "react";
 import PropTypes from "prop-types";
+//components
+import IconButton from "components/IconButton";
 //assets
 import styled from "styled-components/macro";
 import avatar from "pages/App/assets/img/avatar/defaultFemale.svg";
@@ -18,6 +20,7 @@ const S = {};
 
 S.Container = styled.div({
   display: "flex",
+  flexDirection: "column",
 });
 
 S.AvatarsSection = styled.div({
@@ -117,6 +120,7 @@ const Testimonials = () => {
           );
         })}
       </S.AvatarsSection>
+      <IconButton />
     </S.Container>
   );
 };
