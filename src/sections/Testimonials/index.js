@@ -55,8 +55,19 @@ const Testimonials = () => {
           );
         })}
       </S.AvatarsSection>
-      <S.QuoteContainer></S.QuoteContainer>
-      <IconButton isIcon>AAAAAAAA</IconButton>
+      <S.QuoteContainer>
+        <S.QuoteAndButtons>
+          <IconButton isIcon rotate={180} />
+          <figure>
+            <blockquote>
+              Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing
+              tristique.
+            </blockquote>
+            <figcaption></figcaption>
+          </figure>
+          <IconButton isIcon />
+        </S.QuoteAndButtons>
+      </S.QuoteContainer>
     </S.Container>
   );
 };

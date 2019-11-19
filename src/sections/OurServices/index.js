@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 //components
 import ServiceArticle from "pages/App/components/ServiceArticle";
 import Title from "components/Title";
+import Quote from "components/Quote";
 //assets
 import styled from "styled-components/macro";
 import { colors, quote, text } from "assets/styles/utils/vars";
@@ -30,7 +31,7 @@ S.Title = styled(Title)({
   marginBottom: "55px",
 });
 
-S.QuoteContainer = styled.figure({
+S.QuoteContainer = styled(Quote)({
   position: "relative",
   zIndex: "0",
   margin: "120px 0 0 0",
@@ -72,7 +73,7 @@ const OurServices = ({
   quote = {},
   paddingTop,
 }) => {
-  const { quoteText, photo, autor, company } = quote;
+  const { quoteText, photo, author, company } = quote;
 
   return (
     <S.Container paddingTop={paddingTop}>
@@ -84,13 +85,12 @@ const OurServices = ({
         ))}
       </S.ServicesContainer>
       {quote && (
-        <S.QuoteContainer>
-          <blockquote>{quoteText}</blockquote>
-          <img src={photo} alt="photo autor" />
-          <figcaption>
-            {autor} - <span>{company}</span>
-          </figcaption>
-        </S.QuoteContainer>
+        <S.QuoteContainer
+          quoteText={quoteText}
+          photo={photo}
+          author={author}
+          company={company}
+        />
       )}
     </S.Container>
   );

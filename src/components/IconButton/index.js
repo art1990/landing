@@ -54,7 +54,7 @@ S.TextIcon = styled(S.Container)(
     },
 );
 
-const IconButton = ({ className, children, icon, rotate, isIcon }) => {
+const IconButton = ({ className, children, icon, rotate, isIcon, onClick }) => {
   const [isHover, setIsHover] = useState(false);
   const [isClick, setIsClick] = useState(false);
 
@@ -63,6 +63,7 @@ const IconButton = ({ className, children, icon, rotate, isIcon }) => {
       className={className}
       rotate={rotate}
       isIcon={isIcon}
+      onClick={onClick}
       onMouseOver={() => setIsHover(true)}
       onMouseOut={() => setIsHover(false)}
       onMouseDown={() => setIsClick(true)}
@@ -84,6 +85,7 @@ IconButton.propTypes = {
   icon: PropTypes.string,
   rotate: PropTypes.number,
   isIcon: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 export default IconButton;

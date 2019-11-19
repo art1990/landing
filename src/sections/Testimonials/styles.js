@@ -65,3 +65,9 @@ S.GeneralAvatar = styled.div({
     margin: "-8% 0 10px 0",
   },
 });
+
+S.QuoteContainer = styled.div({
+  display: "flex",
+});
+
+S.QuoteAndButtons = styled.div({});
