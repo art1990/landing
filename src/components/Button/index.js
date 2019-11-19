@@ -36,8 +36,8 @@ S.Button = styled.button({
   },
 });
 
-const Button = ({ className, children, onClick }) => (
-  <S.Button className={className} onClick={onClick}>
+const Button = ({ className, type, children, onClick }) => (
+  <S.Button className={className} onClick={onClick} type={type || "button"}>
     {children}
   </S.Button>
 );
@@ -46,6 +46,7 @@ Button.propTypes = {
   children: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func,
+  type: PropTypes.string,
 };
 
 export default Button;
