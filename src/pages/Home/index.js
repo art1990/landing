@@ -9,6 +9,7 @@ import OurServices from "sections/OurServices";
 import Benefits from "sections/Benefits";
 import Clients from "sections/Clients";
 import WithCards from "sections/WithCards";
+import Testimonials from "sections/Testimonials";
 //utils
 import {
   articles,
@@ -94,6 +95,7 @@ const Home = () => {
         }
         cards={cards}
       />
+      <Testimonials />
     </>
   );
 };

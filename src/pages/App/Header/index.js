@@ -32,6 +32,7 @@ const Header = ({
   logoColor,
   logo,
   tel,
+  isHome,
   linkStyles,
   linkNamesArray,
 }) => {
@@ -87,7 +88,11 @@ const Header = ({
         <S.LinkSection>
           {createArrayOfNavLinks(true, scrollingColor)}
         </S.LinkSection>
-        <CustomLink color={scrollingColor || color} tel={tel} />
+        <CustomLink
+          color={scrollingColor || color}
+          tel={tel}
+          isPhoneIconDark={isScrolling || !isHome}
+        />
         <Menu>{createArrayOfNavLinks()}</Menu>
       </NavigationPanel>
     </S.Container>
@@ -99,6 +104,7 @@ Header.propTypes = {
   logoColor: PropTypes.string,
   logo: PropTypes.string,
   tel: PropTypes.string,
+  isHome: PropTypes.bool,
   linkStyles: PropTypes.object,
   linkNamesArray: PropTypes.array,
 };

@@ -182,3 +182,11 @@ export const quote = {
     lineHeight: "40px",
   },
 };
+
+/* ***shadows*** */
+
+export const shadow = {
+  violet: { boxShadow: "0px 8px 64px rgba(94, 35, 157, 0.25)" },
+  green: { boxShadow: "0px 8px 64px rgba(0, 240, 181, 0.25)" },
+  pink: { boxShadow: "0px 8px 64px rgba(246, 16, 103, 0.25)" },
+};

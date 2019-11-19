@@ -6,6 +6,8 @@ import { Link, NavLink } from "react-router-dom";
 //assets
 import { S } from "components/CustomLink/styles";
 import phoneIcon from "assets/img/phoneIcon.svg";
+import phoneIconDark from "assets/img/phoneIconDark.svg";
+import mailIcon from "assets/img/mailIcon.svg";
 
 const CustomLink = ({
   children,
@@ -14,6 +16,7 @@ const CustomLink = ({
   linkStyles,
   activeLinkStyles,
   tel,
+  isPhoneIconDark,
   mail,
   hasActiveClass,
   navLink,
@@ -37,9 +40,11 @@ const CustomLink = ({
       <>
         <a href={tel ? `tel:${tel}` : `mailto:${mail}`}>
           <img
-            src={tel ? phoneIcon : phoneIcon}
+            src={
+              tel ? (!isPhoneIconDark ? phoneIcon : phoneIconDark) : mailIcon
+            }
             alt={`${tel ? "phone" : "mail"} icon`}
-          />{" "}
+          />
           {tel || mail}
         </a>
       </>
@@ -54,6 +59,7 @@ CustomLink.propTypes = {
   linkStyles: PropTypes.object,
   activeLinkStyles: PropTypes.object,
   tel: PropTypes.string,
+  isPhoneIconDark: PropTypes.bool,
   mail: PropTypes.string,
   hasActiveClass: PropTypes.bool,
   navLink: PropTypes.bool,
