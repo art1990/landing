@@ -54,12 +54,21 @@ S.TextIcon = styled(S.Container)(
     },
 );
 
-const IconButton = ({ className, children, icon, rotate, isIcon, onClick }) => {
+const IconButton = ({
+  type,
+  className,
+  children,
+  icon,
+  rotate,
+  isIcon,
+  onClick,
+}) => {
   const [isHover, setIsHover] = useState(false);
   const [isClick, setIsClick] = useState(false);
 
   return (
     <S.TextIcon
+      type={type}
       className={className}
       rotate={rotate}
       isIcon={isIcon}
@@ -80,6 +89,7 @@ const IconButton = ({ className, children, icon, rotate, isIcon, onClick }) => {
 };
 
 IconButton.propTypes = {
+  type: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.string,
   icon: PropTypes.string,

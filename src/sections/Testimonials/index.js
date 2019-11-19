@@ -7,7 +7,6 @@ import Quote from "components/Quote";
 //assets
 import { S } from "sections/Testimonials/styles";
 import avatar from "pages/App/assets/img/avatar/defaultFemale.svg";
-import avatarMale from "pages/App/assets/img/avatar/defaultMale.svg";
 import av1 from "pages/App/assets/img/avatar/1.svg";
 import av2 from "pages/App/assets/img/avatar/2.svg";
 import av3 from "pages/App/assets/img/avatar/3.svg";
@@ -65,12 +64,14 @@ const Testimonials = ({ quote }) => {
           <IconButton
             isIcon
             rotate={180}
-            onClick={() => setQuoteNum((quoteNum - 1) % 3 || 1)}
+            onClick={() =>
+              setQuoteNum(quoteNum - 1 === 0 ? quote.length - 1 : quoteNum - 1)
+            }
           />
           <Quote quoteText={quoteText} author={author} company={company} />
           <IconButton
             isIcon
-            onClick={() => setQuoteNum((quoteNum + 1) % 3 || 1)}
+            onClick={() => setQuoteNum((quoteNum + 1) % quote.length || 1)}
           />
         </S.QuoteAndButtons>
       </S.QuoteContainer>

@@ -7,6 +7,7 @@ export const S = {};
 S.Container = styled.div({
   display: "flex",
   flexDirection: "column",
+  paddingBottom: "135px",
 
   button: {
     height: "fit-content",
@@ -82,6 +83,7 @@ S.QuoteContainer = styled.div({
 S.QuoteAndButtons = styled.div({
   blockquote: {
     ...quote.large,
+
     color: colors.textHeaders,
 
     width: "65%",
@@ -90,11 +92,14 @@ S.QuoteAndButtons = styled.div({
 
   figcaption: {
     transform: "translateY(30px)",
+
     ...text.regularBold,
+
     color: colors.primary,
 
     span: {
       ...text.regular,
+
       color: colors.textHeaders,
     },
   },
