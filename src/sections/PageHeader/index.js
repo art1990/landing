@@ -4,11 +4,12 @@ import PropTypes from "prop-types";
 //assets
 import styled from "styled-components/macro";
 import header from "pages/Home/assets/img/header.svg";
+import { colors } from "assets/styles/utils/vars";
 
 const S = {};
 
 S.Container = styled.div(() => ({
-  color: "white",
+  color: colors.white,
   backgroundColor: "#5E239D",
   backgroundImage: `url(${header}), linear-gradient(90deg, #5E239D 0%, rgba(196, 196, 196, 0) 56.77%)`,
   backgroundBlendMode: "multiply",

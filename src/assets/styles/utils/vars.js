@@ -153,7 +153,10 @@ export const textMisc = {
     fontSize: "12.6px",
     lineHeight: "28px",
     letterSpacing: "1px",
-    textTransform: "uppercase",
+  },
+  contentInfo: {
+    fontSize: "11.7px",
+    lineHeight: "19px",
   },
   button: {
     fontWeight: "500",

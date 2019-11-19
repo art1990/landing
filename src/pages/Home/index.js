@@ -11,6 +11,7 @@ import Clients from "sections/Clients";
 import WithCards from "sections/WithCards";
 import Testimonials from "sections/Testimonials";
 import Subscribe from "sections/Subscribe";
+import Footer from "pages/App/Footer";
 //utils
 import {
   articles,
@@ -97,6 +98,7 @@ const Home = () => {
       />
       <Testimonials quote={quote} />
       <Subscribe />
+      <Footer />
     </>
   );
 };

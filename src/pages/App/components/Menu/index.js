@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 //assets
 import styled from "styled-components/macro";
+import { colors } from "assets/styles/utils/vars";
 
 const S = {};
 
@@ -14,7 +15,7 @@ S.Container = styled.div(({ color, width }) => ({
   alignItems: "center",
   width: width + "px" || "auto",
 
-  "& a": { color: color || "white" },
+  "& a": { color: color || colors.white },
 
   span: {
     padding: "5px",

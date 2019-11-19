@@ -1,5 +1,6 @@
 //assets
 import styled from "styled-components/macro";
+import { colors } from "assets/styles/utils/vars";
 
 export const S = {};
 
@@ -21,8 +22,10 @@ S.Container = styled.div(
           },
         }
       : {};
+
     return {
       ...linkStylesWithIcon,
+
       width: width ? "100%" : "auto",
       maxWidth: width + "px" || "auto",
       backgroundColor: "transparent",
@@ -30,18 +33,24 @@ S.Container = styled.div(
       a: {
         padding: "5px 0 5px 0",
         position: "relative",
-        color: color || "white",
+        color: color || colors.white,
         textDecoration: "none",
+
         ...linkStyles,
+      },
+
+      ":hover": {
+        opacity: ".8",
       },
 
       "& a.active": hasActiveClass && {
         ...activeLinkStyles,
+
         "::before": {
           content: "''",
           width: "60%",
           height: "2px",
-          backgroundColor: color || "white",
+          backgroundColor: color || colors.white,
           position: "absolute",
           bottom: "-20%",
           left: "50%",
