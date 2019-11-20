@@ -40,7 +40,8 @@ S.Container = styled.div(
       },
 
       ":hover": {
-        opacity: ".8",
+        opacity: ".7",
+        transition: "opacity .5s",
       },
 
       "& a.active": hasActiveClass && {

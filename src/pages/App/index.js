@@ -1,15 +1,13 @@
 //react
-import React, { useMemo } from "react";
+import React from "react";
 //route
 import { Route, Switch } from "react-router-dom";
 //pages
 import Home from "pages/Home";
 import Services from "pages/Services";
-import Team from "pages/Team";
 //components
 import Header from "pages/App/Header";
 //assets
-import styled from "styled-components/macro";
 import { textMisc, colors } from "assets/styles/utils/vars";
 
 const App = props => {

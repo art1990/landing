@@ -1,6 +1,5 @@
 //react
 import React from "react";
-import PropTypes from "prop-types";
 //components
 import ImageLink from "components/ImageLink";
 //sections
@@ -59,7 +58,7 @@ const Home = () => {
 
   return (
     <>
-      <PageHeader title={title} heading={heading} />
+      <PageHeader title={title} heading={heading} hasScroll />
       <OurServices
         title="What we can do?"
         heading={<h3>Our services</h3>}
@@ -102,7 +101,5 @@ const Home = () => {
     </>
   );
 };
-
-Home.propTypes = {};
 
 export default Home;
