@@ -33,6 +33,7 @@ const defaultStyles = {
 export const headers = {
   h1: {
     ...defaultStyles,
+
     margin: "0.3em 0",
     fontWeight: 900,
     fontSize: "99px",
@@ -40,28 +41,35 @@ export const headers = {
   },
   h2: {
     ...defaultStyles,
+
+    margin: "0.3em 0",
     fontSize: "54px",
     lineHeight: "80px",
   },
   h3: {
     ...defaultStyles,
+
     margin: "0.3em 0",
     fontSize: "45px",
     lineHeight: "67px",
   },
   h4: {
     ...defaultStyles,
+
     margin: "0.7em 0",
     fontSize: "36px",
     lineHeight: "53px",
   },
   h5: {
     ...defaultStyles,
+
+    margin: "0.3em 0",
     fontSize: "27px",
     lineHeight: "40px",
   },
   h6: {
     ...defaultStyles,
+
     fontSize: "18px",
     lineHeight: "27px",
   },

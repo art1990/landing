@@ -16,6 +16,7 @@ S.Container = styled.div(() => ({
 
 S.Heading = styled.div({
   ...headers.h6,
+
   color: colors.textHeaders,
   marginTop: "18px",
 });

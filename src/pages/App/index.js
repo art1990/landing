@@ -35,7 +35,7 @@ const App = props => {
       />
       <Switch>
         <Route exact path="/" component={Home} />
-        {/*<Route exact path="/services" component={Services} />*/}
+        <Route exact path="/services" component={Services} />
         {/*<Route exact path="/team" component={Team} />*/}
       </Switch>
     </div>

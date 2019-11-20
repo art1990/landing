@@ -1,5 +1,5 @@
 //react
-import React from "react";
+import React, { useState } from "react";
 //components
 import ImageLink from "components/ImageLink";
 //sections
@@ -24,6 +24,7 @@ import styled from "styled-components/macro";
 import { headers, textMisc, colors } from "assets/styles/utils/vars";
 import codepen from "pages/Home/assets/img/codepen.svg";
 import dribbble from "pages/Home/assets/img/dribbble.svg";
+import headerBackground from "pages/Home/assets/img/header.svg";
 
 const S = {};
 
@@ -48,6 +49,7 @@ const imgLinkArr = new Array(6)
   ));
 
 const Home = () => {
+  const [serviceSectionPosition, setServiceSectionPosition] = useState(null);
   const title = <div style={textMisc.titleMedium}>What we do?</div>;
 
   const heading = (
@@ -58,13 +60,21 @@ const Home = () => {
 
   return (
     <>
-      <PageHeader title={title} heading={heading} hasScroll />
+      <PageHeader
+        title={title}
+        heading={heading}
+        backgroundImage={headerBackground}
+        isBackgroundLinearGradient
+        hasScroll
+        serviceSectionPosition={serviceSectionPosition}
+      />
       <OurServices
         title="What we can do?"
         heading={<h3>Our services</h3>}
         articles={articles}
         quote={quote}
         paddingTop={170}
+        setServiceSectionPosition={setServiceSectionPosition}
       />
       <Benefits
         title="Benefits"

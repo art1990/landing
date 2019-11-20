@@ -11,13 +11,16 @@ import { textMisc, colors } from "assets/styles/utils/vars";
 
 const S = {};
 
-S.Container = styled.div(({ backgroundColor }) => ({
+S.Container = styled.div(({ backgroundColor, padding }) => ({
   position: "fixed",
   zIndex: "1",
   top: "0px",
   left: "0px",
   width: "100%",
+  padding: padding || "20px 0",
   backgroundColor: backgroundColor || "transparent",
+  opacity: padding ? 0.9 : 1,
+  transition: "padding 1s, background 1s",
 }));
 
 S.LinkSection = styled.div({
@@ -75,7 +78,12 @@ const Header = ({
   );
 
   return (
-    <S.Container backgroundColor={isScrolling && colors.lightGrey}>
+    <S.Container
+      backgroundColor={
+        (isScrolling && colors.lightGrey) || (!isHome && colors.white)
+      }
+      padding={isScrolling && "10px 0"}
+    >
       <NavigationPanel>
         <CustomLink
           color={(isScrolling && colors.violet) || logoColor}
@@ -93,7 +101,7 @@ const Header = ({
           tel={tel}
           isPhoneIconDark={isScrolling || !isHome}
         />
-        <Menu>{createArrayOfNavLinks()}</Menu>
+        <Menu color={scrollingColor || color}>{createArrayOfNavLinks()}</Menu>
       </NavigationPanel>
     </S.Container>
   );

@@ -4,55 +4,7 @@ import PropTypes from "prop-types";
 //components
 import Arrow from "components/Arrow";
 //assets
-import styled from "styled-components/macro";
-import { colors, textMisc } from "assets/styles/utils/vars";
-
-const S = {};
-
-S.Container = styled.button(({ rotate }) => ({
-  //reset
-  padding: 0,
-  border: "none",
-  font: "inherit",
-  color: "inherit",
-  backgroundColor: "transparent",
-  cursor: "pointer",
-  ":focus": {
-    outline: "none",
-  },
-
-  display: "flex",
-  width: "min-content",
-  transform: `rotate(${rotate}deg)`,
-}));
-
-S.TextIcon = styled(S.Container)(
-  ({ isIcon }) =>
-    !isIcon && {
-      ...textMisc.titleSmall,
-      color: colors.primary,
-      height: "50px",
-      padding: "0 27px",
-      background:
-        "linear-gradient(180deg, rgba(242, 242, 242, 0.5) 0%, rgba(255, 255, 255, 0) 100%)",
-      ":hover": {
-        background:
-          "linear-gradient(180deg, #F2F2F2 0%, rgba(255, 255, 255, 0) 100%)",
-      },
-      span: {
-        marginRight: "20px",
-      },
-      ":active": {
-        color: colors.white,
-        background:
-          "linear-gradient(180deg, #F2F2F2 0%, rgba(255, 255, 255, 0) 100%), #F61067",
-        backgroundBlendMode: "multiply, normal",
-        svg: {
-          borderColor: "white",
-        },
-      },
-    },
-);
+import { S } from "components/IconButton/styles";
 
 const IconButton = ({
   type,
@@ -61,6 +13,7 @@ const IconButton = ({
   icon,
   rotate,
   isIcon,
+  isBackgroundTransparent,
   onClick,
 }) => {
   const [isHover, setIsHover] = useState(false);
@@ -73,16 +26,24 @@ const IconButton = ({
       rotate={rotate}
       isIcon={isIcon}
       onClick={onClick}
-      onMouseOver={() => setIsHover(true)}
-      onMouseOut={() => setIsHover(false)}
-      onMouseDown={() => setIsClick(true)}
-      onMouseUp={() => setIsClick(false)}
+      onMouseOver={() => {
+        setIsHover(true);
+      }}
+      onMouseOut={() => {
+        setIsHover(false);
+      }}
+      onMouseDown={e => setIsClick(true)}
+      onMouseUp={e => setIsClick(false)}
     >
       {!isIcon && <span>{children}</span>}
       {icon ? (
         <img src={icon} alt="icon" />
       ) : (
-        <Arrow isHover={isHover} isClick={!isIcon && isClick} />
+        <Arrow
+          isHover={isHover}
+          isClick={!isIcon && isClick}
+          isBackgroundTransparent={isBackgroundTransparent}
+        />
       )}
     </S.TextIcon>
   );
@@ -95,6 +56,7 @@ IconButton.propTypes = {
   icon: PropTypes.string,
   rotate: PropTypes.number,
   isIcon: PropTypes.bool,
+  isBackgroundTransparent: PropTypes.bool,
   onClick: PropTypes.func,
 };
 

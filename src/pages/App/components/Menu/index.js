@@ -2,47 +2,19 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 //assets
-import styled from "styled-components/macro";
-import { colors } from "assets/styles/utils/vars";
+import { S } from "pages/App/components/Menu/styles";
 
-const S = {};
-
-S.Container = styled.div(({ color, width }) => ({
-  position: "relative",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  alignItems: "center",
-  width: width + "px" || "auto",
-
-  "& a": { color: color || colors.white },
-
-  span: {
-    padding: "5px",
-  },
-}));
-
-S.List = styled.ul(({ isOpen }) => ({
-  position: "absolute",
-  right: "0px",
-  visibility: isOpen ? "visible" : "hidden",
-  // transform: `translate(${isOpen ? "0%" : "100%"}, 15%)`,
-  padding: "0 10px",
-  listStyle: "none",
-  backgroundColor: "#a7a7a7",
-  borderRadius: "5px",
-  // transform: "translateY(15%)",
-  transition: "transform .7s ease-in",
-  li: {},
-}));
-
-const Menu = ({ children }) => {
+const Menu = ({ children, color }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <S.Container>
-      <button onClick={() => setIsOpen(!isOpen)}>Menu</button>
-      <S.List isOpen={isOpen}>
+      <S.Button onClick={() => setIsOpen(!isOpen)}>
+        {Array.from(Array(3)).map((e, i) => (
+          <S.HamburgerLine key={i} color={color} />
+        ))}
+      </S.Button>
+      <S.List isOpen={isOpen} onClick={() => setIsOpen(false)}>
         {(Array.isArray(children) ? children : [children]).map(
           (link, index) => (
             <li key={index}>{link}</li>
@@ -55,6 +27,7 @@ const Menu = ({ children }) => {
 
 Menu.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
+  color: PropTypes.string,
 };
 
 export default Menu;
