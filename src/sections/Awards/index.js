@@ -17,7 +17,7 @@ S.Container = styled.div({
 
   paddingTop: "110px",
   textAlign: "center",
-  backgroundColor: "white",
+  backgroundColor: "transparent",
   color: colors.textHeaders,
 });
 
@@ -37,6 +37,8 @@ S.CountContainer = styled.div({
 
 S.Count = styled.span({
   ...headers.h1,
+
+  marginBottom: "0.1em",
 });
 
 S.Name = styled.span({

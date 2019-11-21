@@ -12,9 +12,7 @@ import { textMisc, colors } from "assets/styles/utils/vars";
 
 const App = props => {
   return (
-    <div
-      style={{ maxWidth: "1440px", margin: "0 auto", background: colors.white }}
-    >
+    <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
       <Route
         path="/"
         render={({ location: { pathname } }) => {

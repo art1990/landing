@@ -3,12 +3,15 @@ import React from "react";
 //sections
 import PageHeader from "sections/PageHeader";
 import Awards from "sections/Awards";
+import OurServices from "sections/OurServices";
+import WithCardsAndImg from "sections/WithCardsAndImg";
 import Subscribe from "sections/Subscribe";
 import Footer from "pages/App/Footer";
 //utils
-import { awardsArr } from "pages/Services/utils/data";
+import { awardsArr, articles } from "pages/Services/utils/data";
 //assets
 import styled from "styled-components/macro";
+import { S as STitle } from "components/Title/index";
 import { headers, textMisc, colors } from "assets/styles/utils/vars";
 import headerBackground from "pages/Services/assets/img/header.svg";
 import map from "pages/Services/assets/img/map.svg";
@@ -27,6 +30,19 @@ S.Heading = styled.h2({
 
 S.WrapperWithMap = styled.div({
   backgroundImage: `url(${map})`,
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "0 200px",
+});
+
+S.OurServices = styled(OurServices)({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  padding: "180px 0",
+
+  [`${STitle.Container}`]: {
+    textAlign: "center",
+  },
 });
 
 const Services = () => {
@@ -54,6 +70,13 @@ const Services = () => {
             </h5>
           }
           awardsArr={awardsArr}
+        />
+        <S.OurServices
+          title="We are Amazing"
+          heading={<h3>Our services</h3>}
+          textBold="Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna. Quam elementum pulvinar etiam non. Eu consequat."
+          titleMaxWidth="700px"
+          articles={articles}
         />
       </S.WrapperWithMap>
       {/*<OurServices*/}
@@ -94,7 +117,12 @@ const Services = () => {
       {/*  cards={cards}*/}
       {/*/>*/}
       {/*<Testimonials quote={quote} />*/}
-      <Subscribe />
+      {/*<Subscribe />*/}
+      <WithCardsAndImg
+        title="what we do"
+        heading={<h3>What we do</h3>}
+        textAfterHeading="Upper prior hundred links approach reedy, was to the than and the ever somehow surprised known for every by of there until road, "
+      />
       <Footer />
     </>
   );

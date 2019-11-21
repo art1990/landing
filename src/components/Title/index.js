@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components/macro";
 import { colors, headers, text, textMisc } from "assets/styles/utils/vars";
 
-const S = {};
+export const S = {};
 
 S.Container = styled.div(({ maxWidth }) => ({
   h3: {

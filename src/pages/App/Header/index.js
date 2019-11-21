@@ -19,8 +19,8 @@ S.Container = styled.div(({ backgroundColor, padding }) => ({
   width: "100%",
   padding: padding || "20px 0",
   backgroundColor: backgroundColor || "transparent",
-  opacity: padding ? 0.9 : 1,
-  transition: "padding 1s, background 1s",
+  opacity: padding ? 0.95 : 1,
+  transition: "padding .3s, background .5s",
 }));
 
 S.LinkSection = styled.div({

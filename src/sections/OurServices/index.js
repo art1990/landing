@@ -9,33 +9,42 @@ import { S } from "sections/OurServices/styles";
 const OurServices = ({
   title,
   heading,
+  textBold,
+  className,
   articles,
-  quote = {},
+  quote,
+  titleMaxWidth,
   paddingTop,
   setServiceSectionPosition,
 }) => {
   let position;
-  const { quoteText, photo, author, company } = quote[0];
+  const { quoteText, photo, author, company } = quote ? quote[0] : {};
 
   const getRef = e => e && (position = e.getBoundingClientRect());
 
   useEffect(() => {
-    setServiceSectionPosition(position);
+    setServiceSectionPosition && setServiceSectionPosition(position);
   }, [position, setServiceSectionPosition]);
 
   return (
-    <S.Container paddingTop={paddingTop} ref={getRef}>
-      <S.Title title={title} heading={heading} />
-      {/*<S.Text></S.Text>*/}
+    <S.Container paddingTop={paddingTop} ref={getRef} className={className}>
+      <S.Title
+        title={title}
+        heading={heading}
+        textBold={textBold}
+        maxWidth={titleMaxWidth}
+      />
       <S.ServicesContainer>
-        {articles.map(({ heading, article, icon }, i) => (
-          <ServiceArticle
-            key={i}
-            heading={heading}
-            article={article}
-            icon={icon}
-          />
-        ))}
+        {articles &&
+          articles.map(({ heading, article, articleHeaderColor, icon }, i) => (
+            <ServiceArticle
+              key={i}
+              heading={heading}
+              article={article}
+              articleHeaderColor={articleHeaderColor}
+              icon={icon}
+            />
+          ))}
       </S.ServicesContainer>
       {quote && (
         <S.QuoteContainer
@@ -52,8 +61,11 @@ const OurServices = ({
 OurServices.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.object,
+  textBold: PropTypes.string,
+  className: PropTypes.string,
   articles: PropTypes.array,
   quote: PropTypes.array,
+  titleMaxWidth: PropTypes.string,
   paddingTop: PropTypes.number,
   setServiceSectionPosition: PropTypes.func,
 };

@@ -12,6 +12,8 @@ export const colors = {
   white: "#FCFCFC",
   lightGrey: "#F4F4ED",
 
+  gold: "#F67110",
+
   textHeaders: "#30233D",
   textMain: "#776C82",
   textGrey: "#9B94A3",

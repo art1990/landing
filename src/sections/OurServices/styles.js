@@ -18,7 +18,7 @@ S.ServicesContainer = styled.div({
   display: "grid",
   gridTemplateRows: "repeat(2, 1fr)",
   gridTemplateColumns: "repeat(3, 26%)",
-  gridColumnGap: "100px",
+  gridColumnGap: "130px",
   gridRowGap: "65px",
   alignItems: "start",
 });
@@ -47,7 +47,7 @@ S.QuoteContainer = styled(Quote)({
   img: {
     position: "absolute",
     right: 0,
-    top: "-45%",
+    top: "-35%",
   },
 
   figcaption: {

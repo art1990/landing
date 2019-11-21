@@ -30,8 +30,21 @@ S.Container = styled.div(({ padding, variantRed, variant2 }) => {
   };
 });
 
-const Card = ({ title, heading, padding, children, variantRed, variant2 }) => (
-  <S.Container variantRed={variantRed} variant2={variant2} padding={padding}>
+const Card = ({
+  title,
+  heading,
+  padding,
+  children,
+  className,
+  variantRed,
+  variant2,
+}) => (
+  <S.Container
+    className={className}
+    variantRed={variantRed}
+    variant2={variant2}
+    padding={padding}
+  >
     <Title
       title={title}
       heading={<h5>{heading}</h5>}
@@ -46,6 +59,7 @@ Card.propTypes = {
   heading: PropTypes.string,
   padding: PropTypes.string,
   children: PropTypes.string,
+  className: PropTypes.string,
   variantRed: PropTypes.bool,
   variant2: PropTypes.bool,
 };

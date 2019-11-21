@@ -7,7 +7,7 @@ import { colors, headers, text } from "assets/styles/utils/vars";
 import Title from "components/Title";
 import TextList from "components/TextList";
 
-const S = {};
+export const S = {};
 
 S.Container = styled.div({
   color: colors.textHeaders,
@@ -45,34 +45,41 @@ S.SectionText = styled.div({
 });
 
 const BackgroundOutsideContent = ({
+  className,
   title,
   heading,
+  textAfterHeading,
   headingSectionWithBackground,
+  isReverse,
   listArr,
   itemArr,
 }) => {
   return (
-    <S.Container>
-      <S.Title title={title} heading={heading} />
+    <S.Container className={className}>
+      <S.Title title={title} heading={heading} textBold={textAfterHeading} />
       <div>
-        {itemArr.map(({ background, textSection }, i) => (
-          <S.Item key={i} reverse={i % 2}>
-            <S.SectionWithBackround background={background}>
-              {headingSectionWithBackground}
-              <S.TextList listArr={listArr} />
-            </S.SectionWithBackround>
-            <S.SectionText>{textSection}</S.SectionText>
-          </S.Item>
-        ))}
+        {itemArr &&
+          itemArr.map(({ background, textSection }, i) => (
+            <S.Item key={i} reverse={isReverse ? !(i % 2) : i % 2}>
+              <S.SectionWithBackround background={background}>
+                {headingSectionWithBackground}
+                {listArr && <S.TextList listArr={listArr} />}
+              </S.SectionWithBackround>
+              <S.SectionText>{textSection}</S.SectionText>
+            </S.Item>
+          ))}
       </div>
     </S.Container>
   );
 };
 
 BackgroundOutsideContent.propTypes = {
+  className: PropTypes.string,
   title: PropTypes.string,
   heading: PropTypes.object,
+  textAfterHeading: PropTypes.string,
   headingSectionWithBackground: PropTypes.object,
+  isReverse: PropTypes.bool,
   listArr: PropTypes.array,
   itemArr: PropTypes.array,
 };
