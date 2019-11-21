@@ -13,7 +13,7 @@ S.Container = styled.div({
   justifyContent: "center",
   alignItems: "center",
 
-  img: {
+  [`& > img`]: {
     marginBottom: "20px",
   },
 });
@@ -43,10 +43,7 @@ const PersonInfo = ({
 }) => (
   <S.Container className={className}>
     <img src={avatar} alt="avatar" />
-    <S.Name>
-      {firstName}
-      {lastName}
-    </S.Name>
+    <S.Name>{`${firstName} ${lastName}`}</S.Name>
     <S.Profession>{profession}</S.Profession>
     {children}
   </S.Container>
