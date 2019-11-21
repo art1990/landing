@@ -7,6 +7,8 @@ export const S = {};
 S.Container = styled.div({
   display: "flex",
   flexDirection: "column",
+
+  backgroundColor: colors.white,
   paddingBottom: "135px",
 
   button: {

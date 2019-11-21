@@ -66,6 +66,7 @@ const Home = () => {
         backgroundImage={headerBackground}
         isBackgroundLinearGradient
         hasScroll
+        hasButton
         serviceSectionPosition={serviceSectionPosition}
       />
       <OurServices

@@ -6,9 +6,10 @@ import Awards from "sections/Awards";
 import OurServices from "sections/OurServices";
 import WithCardsAndImg from "sections/WithCardsAndImg";
 import Subscribe from "sections/Subscribe";
+import Testimonials from "sections/Testimonials";
 import Footer from "pages/App/Footer";
 //utils
-import { awardsArr, articles } from "pages/Services/utils/data";
+import { awardsArr, articles, quote } from "pages/Services/utils/data";
 //assets
 import styled from "styled-components/macro";
 import { S as STitle } from "components/Title/index";
@@ -79,50 +80,13 @@ const Services = () => {
           articles={articles}
         />
       </S.WrapperWithMap>
-      {/*<OurServices*/}
-      {/*  title="What we can do?"*/}
-      {/*  heading={<h3>Our services</h3>}*/}
-      {/*  articles={articles}*/}
-      {/*  quote={quote}*/}
-      {/*  paddingTop={170}*/}
-      {/*  setServiceSectionPosition={setServiceSectionPosition}*/}
-      {/*/>*/}
-      {/*<Benefits*/}
-      {/*  title="Benefits"*/}
-      {/*  heading={<h3>Shaping the future</h3>}*/}
-      {/*  text={benefits.text}*/}
-      {/*  imgArr={benefits.imgArr}*/}
-      {/*/>*/}
-      {/*<Clients*/}
-      {/*  title="What we do"*/}
-      {/*  heading={*/}
-      {/*    <h3>*/}
-      {/*      What we do more than you can <br /> imangine, belive us.*/}
-      {/*    </h3>*/}
-      {/*  }*/}
-      {/*  background={[colors.darkViolet]}*/}
-      {/*  headingSectionWithBackground={<h4>We build great business</h4>}*/}
-      {/*  sectionClientsTitle="Our clients"*/}
-      {/*  imgLinkArr={imgLinkArr}*/}
-      {/*  listArr={clients.list}*/}
-      {/*/>*/}
-      {/*<WithCards*/}
-      {/*  title="what we do"*/}
-      {/*  heading={*/}
-      {/*    <h5>*/}
-      {/*      Apparently we had reached a great height in the atmosphere, for the*/}
-      {/*      sky was a dead black, and the stars had ceased to twinkle.*/}
-      {/*    </h5>*/}
-      {/*  }*/}
-      {/*  cards={cards}*/}
-      {/*/>*/}
-      {/*<Testimonials quote={quote} />*/}
-      {/*<Subscribe />*/}
       <WithCardsAndImg
         title="what we do"
         heading={<h3>What we do</h3>}
         textAfterHeading="Upper prior hundred links approach reedy, was to the than and the ever somehow surprised known for every by of there until road, "
       />
+      <Testimonials quote={quote} />
+      <Subscribe />
       <Footer />
     </>
   );

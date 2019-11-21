@@ -11,6 +11,10 @@ import workplace1 from "pages/Services/assets/img/workplace/workplace1.svg";
 import workplace2 from "pages/Services/assets/img/workplace/workplace2.svg";
 import workplace3 from "pages/Services/assets/img/workplace/workplace3.svg";
 
+import photo from "pages/Home/assets/img/photoAndrei.svg";
+import feMale from "pages/App/assets/img/avatar/defaultFemale.svg";
+import male from "pages/App/assets/img/avatar/defaultMale.svg";
+
 export const awardsArr = [
   { count: "15+", name: "nobel prizes", color: colors.primary },
   { count: "33", name: "nobel prizes", color: colors.lightPurple },
@@ -85,3 +89,27 @@ export const workplace = {
     },
   ],
 };
+
+export const quote = [
+  {
+    quoteText:
+      "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
+    author: "Andrew Slomka",
+    company: "Some Company",
+    photo,
+  },
+  {
+    quoteText:
+      "Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing tristique y.",
+    author: "Kerry Johnes",
+    company: "Some Company",
+    photo: feMale,
+  },
+  {
+    quoteText:
+      "Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing tristique 123.",
+    author: "Key Johnes",
+    company: "Some Company",
+    photo: male,
+  },
+];

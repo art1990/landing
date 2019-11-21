@@ -52,14 +52,13 @@ S.List = styled.ul(({ isOpen }) => ({
   right: "0px",
   top: "20px",
 
-  visibility: isOpen ? "visible" : "hidden",
-  opacity: isOpen ? 1 : 0,
-  // transform: `translate(${isOpen ? "0%" : "100%"}, 15%)`,
+  width: "max-content",
   padding: "0",
   backgroundColor: "#a7a7a7",
   borderRadius: "5px",
+  visibility: isOpen ? "visible" : "hidden",
+  opacity: isOpen ? 1 : 0,
   overflow: "hidden",
-  // transform: "translateY(15%)",
   transition: "opacity .4s ease-in",
 
   li: {

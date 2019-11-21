@@ -101,7 +101,14 @@ const Header = ({
           tel={tel}
           isPhoneIconDark={isScrolling || !isHome}
         />
-        <Menu color={scrollingColor || color}>{createArrayOfNavLinks()}</Menu>
+        <Menu color={scrollingColor || color}>
+          {[
+            ...createArrayOfNavLinks(),
+            <CustomLink key={1} linkStyles={linkStyles} navLink to="/team">
+              Our team
+            </CustomLink>,
+          ]}
+        </Menu>
       </NavigationPanel>
     </S.Container>
   );
