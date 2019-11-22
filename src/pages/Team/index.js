@@ -5,14 +5,14 @@ import PageHeader from "sections/PageHeader";
 import OurTeam from "sections/OurTeam";
 import Subscribe from "sections/Subscribe";
 import Testimonials from "sections/Testimonials";
-import Footer from "pages/App/Footer";
+import Footer from "pages/App/components/Footer";
 //utils
-import { personArr } from "pages/Team/utils/data";
+import { personArr } from "data";
 //assets
 import styled from "styled-components/macro";
 import { headers, textMisc, colors } from "assets/styles/utils/vars";
-import headerBackground from "pages/Team/assets/img/header.svg";
-import { quote } from "pages/Team/utils/data";
+import headerBackground from "assets/img/headerOurTeam.png";
+import { quote } from "data";
 
 const S = {};
 

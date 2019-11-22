@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 //assets
 import styled from "styled-components/macro";
 import { colors, headers, text } from "assets/styles/utils/vars";
-import reactIcon from "pages/App/assets/img/skills icon/reactIcon.svg";
+import reactIcon from "assets/img/icon/skills icon/reactIcon.svg";
 
 const S = {};
 

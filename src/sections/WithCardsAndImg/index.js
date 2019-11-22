@@ -2,7 +2,7 @@
 import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 //utils
-import { workplace } from "pages/Services/utils/data";
+import { workplace } from "data";
 //assets
 import { S } from "sections/WithCardsAndImg/styles";
 

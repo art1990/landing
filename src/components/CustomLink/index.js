@@ -5,9 +5,9 @@ import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 //assets
 import { S } from "components/CustomLink/styles";
-import phoneIcon from "assets/img/phoneIcon.svg";
-import phoneIconDark from "assets/img/phoneIconDark.svg";
-import mailIcon from "assets/img/mailIcon.svg";
+import phoneIcon from "assets/img/icon/phoneIcon.svg";
+import phoneIconDark from "assets/img/icon/phoneIconDark.svg";
+import mailIcon from "assets/img/icon/mailIcon.svg";
 
 const CustomLink = ({
   children,

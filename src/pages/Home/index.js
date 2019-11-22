@@ -10,26 +10,28 @@ import Clients from "sections/Clients";
 import WithCards from "sections/WithCards";
 import Testimonials from "sections/Testimonials";
 import Subscribe from "sections/Subscribe";
-import Footer from "pages/App/Footer";
+import Footer from "pages/App/components/Footer";
 //utils
 import {
-  articles,
+  articlesHomePage,
   quote,
+  quoteHomePage,
   benefits,
   clients,
   cards,
-} from "pages/Home/utils/data";
+} from "data";
 //assets
 import styled from "styled-components/macro";
 import { headers, textMisc, colors } from "assets/styles/utils/vars";
-import codepen from "pages/Home/assets/img/codepen.svg";
-import dribbble from "pages/Home/assets/img/dribbble.svg";
-import headerBackground from "pages/Home/assets/img/header.svg";
+import codepen from "assets/img/codepen.svg";
+import dribbble from "assets/img/dribbble.svg";
+import headerBackground from "assets/img/headerHome.png";
 
 const S = {};
 
 S.Heading = styled.h1({
   ...headers.h1,
+
   display: "flex",
   flexDirection: "column",
 
@@ -72,8 +74,8 @@ const Home = () => {
       <OurServices
         title="What we can do?"
         heading={<h3>Our services</h3>}
-        articles={articles}
-        quote={quote}
+        articles={articlesHomePage}
+        quote={quoteHomePage}
         paddingTop={170}
         setServiceSectionPosition={setServiceSectionPosition}
       />

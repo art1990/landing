@@ -1,9 +1,9 @@
 //assets
-import twitter from "pages/App/assets/img/social/twiter.svg";
-import facebook from "pages/App/assets/img/social/facebook.svg";
-import instagram from "pages/App/assets/img/social/instagram.svg";
-import youtube from "pages/App/assets/img/social/youtube.svg";
-import m from "pages/App/assets/img/social/m.svg";
+import twitter from "assets/img/icon/social/twiter.svg";
+import facebook from "assets/img/icon/social/facebook.svg";
+import instagram from "assets/img/icon/social/instagram.svg";
+import youtube from "assets/img/icon/social/youtube.svg";
+import m from "assets/img/icon/social/m.svg";
 
 export const footerData = [
   { menu: ["Home", "About", "Services", "News", "Gallery", "Contact"] },

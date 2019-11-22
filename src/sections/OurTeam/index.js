@@ -2,15 +2,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 //components
-import Title from "components/Title";
-import PersonInfo from "components/PersonInfo";
 import ImageLink from "components/ImageLink";
 //utils
-import { socialIcon } from "pages/Team/utils/data";
+import { socialIcon } from "data";
 //assets
 import { S } from "sections/OurTeam/styles";
-import styled from "styled-components/macro";
-import { colors } from "assets/styles/utils/vars";
 
 const OurTeam = ({ title, heading, headingTextBold, personArr }) => (
   <S.Container>

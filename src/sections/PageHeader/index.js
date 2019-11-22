@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 //components
 import IconButton from "components/IconButton";
 //assets
-import arrow from "assets/img/arrowDown.svg";
+import arrow from "assets/img/icon/arrowDown.svg";
 import { S } from "sections/PageHeader/styles";
 
 const PageHeader = ({
