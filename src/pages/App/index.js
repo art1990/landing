@@ -1,5 +1,5 @@
 //react
-import React from "react";
+import React, { useEffect } from "react";
 //route
 import { Route, Switch, useLocation } from "react-router-dom";
 //pages
@@ -22,9 +22,13 @@ S.Container = styled.div({
 });
 
 const App = () => {
-  const location = useLocation();
+  const { pathname } = useLocation();
 
-  const isHome = location.pathname === "/";
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  const isHome = pathname === "/";
 
   return (
     <S.Container>
