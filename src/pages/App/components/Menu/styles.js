@@ -4,13 +4,18 @@ import { colors } from "assets/styles/utils/vars";
 
 export const S = {};
 
-S.Container = styled.div(({ color, width }) => ({
-  position: "relative",
+S.Container = styled.div(({ color, width, isOpen }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
   alignItems: "center",
+
+  position: "relative",
+
   width: width + "px" || "auto",
+  paddingTop: "5px",
+  boxShadow: isOpen ? "2px 2px 4px 4px grey" : "none",
+  transition: "box-shadow .3s",
 
   "& a": { color: color || colors.white },
 

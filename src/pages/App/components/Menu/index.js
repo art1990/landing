@@ -8,7 +8,7 @@ const Menu = ({ children, color }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <S.Container>
+    <S.Container isOpen={isOpen}>
       <S.Button onClick={() => setIsOpen(!isOpen)}>
         {Array.from(Array(3)).map((e, i) => (
           <S.HamburgerLine key={i} color={color} />
