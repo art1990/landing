@@ -13,9 +13,9 @@ const PageHeader = ({
   padding,
   backgroundImage,
   backgroundPosition,
+  scroll,
+  button,
   isBackgroundLinearGradient,
-  hasScroll,
-  hasButton,
   serviceSectionPosition,
 }) => {
   const scrollDown = useCallback(() => {
@@ -36,17 +36,15 @@ const PageHeader = ({
             {title}
             {heading}
           </S.HeadlineContainer>
-          {hasScroll && (
+          {scroll && (
             <S.ScrollContainer icon={arrow} onClick={scrollDown}>
-              Scroll to see more
+              {scroll}
             </S.ScrollContainer>
           )}
         </S.Section>
-        {hasButton && (
+        {button && (
           <S.ButtonContainer>
-            <span>
-              Velit laoreet id donec ultrices. Ut lectus arcu bibendum varius.
-            </span>
+            <span>{button}</span>
             <IconButton isIcon isBackgroundTransparent />
           </S.ButtonContainer>
         )}
@@ -61,9 +59,9 @@ PageHeader.propTypes = {
   padding: PropTypes.string,
   backgroundImage: PropTypes.string,
   backgroundPosition: PropTypes.string,
+  scroll: PropTypes.string,
+  button: PropTypes.string,
   isBackgroundLinearGradient: PropTypes.bool,
-  hasScroll: PropTypes.bool,
-  hasButton: PropTypes.bool,
   serviceSectionPosition: PropTypes.object,
 };
 

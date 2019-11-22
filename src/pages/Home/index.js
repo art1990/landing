@@ -66,8 +66,8 @@ const Home = () => {
         heading={heading}
         backgroundImage={headerBackground}
         isBackgroundLinearGradient
-        hasScroll
-        hasButton
+        scroll="Scroll to see more"
+        button="Velit laoreet id donec ultrices. Ut lectus arcu bibendum varius."
         serviceSectionPosition={serviceSectionPosition}
       />
       <OurServices
