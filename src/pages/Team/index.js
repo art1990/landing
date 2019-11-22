@@ -5,7 +5,6 @@ import PageHeader from "sections/PageHeader";
 import OurTeam from "sections/OurTeam";
 import Subscribe from "sections/Subscribe";
 import Testimonials from "sections/Testimonials";
-import Footer from "pages/App/components/Footer";
 //utils
 import { personArr } from "data";
 //assets
@@ -49,7 +48,6 @@ const Team = () => {
       />
       <Testimonials quote={quote} />
       <Subscribe />
-      <Footer />
     </>
   );
 };

@@ -11,7 +11,7 @@ S.Container = styled.div({
   maxWidth: "1150px",
   margin: "0 auto",
   display: "flex",
-  paddingTop: "110px",
+  paddingTop: "190px",
   color: colors.darkViolet,
 });
 

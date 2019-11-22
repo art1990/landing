@@ -7,7 +7,6 @@ import OurServices from "sections/OurServices";
 import WithCardsAndImg from "sections/WithCardsAndImg";
 import Subscribe from "sections/Subscribe";
 import Testimonials from "sections/Testimonials";
-import Footer from "pages/App/components/Footer";
 //utils
 import { awardsArr, articlesServices, quote } from "data";
 //assets
@@ -87,7 +86,6 @@ const Services = () => {
       />
       <Testimonials quote={quote} />
       <Subscribe />
-      <Footer />
     </>
   );
 };

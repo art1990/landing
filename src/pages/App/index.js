@@ -8,8 +8,18 @@ import Services from "pages/Services";
 import Team from "pages/Team";
 //components
 import Header from "pages/App/components/Header";
+import Footer from "pages/App/components/Footer";
 //assets
+import styled from "styled-components/macro";
 import { textMisc, colors } from "assets/styles/utils/vars";
+import { footerData } from "data";
+
+const S = {};
+
+S.Container = styled.div({
+  maxWidth: "1440px",
+  margin: "0 auto",
+});
 
 const App = () => {
   const location = useLocation();
@@ -17,7 +27,7 @@ const App = () => {
   const isHome = location.pathname === "/";
 
   return (
-    <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
+    <S.Container>
       <Header
         color={!isHome ? colors.textHeaders : undefined}
         logoColor={!isHome ? colors.violet : undefined}
@@ -32,7 +42,8 @@ const App = () => {
         <Route exact path="/services" component={Services} />
         <Route exact path="/team" component={Team} />
       </Switch>
-    </div>
+      <Footer footerData={footerData} />
+    </S.Container>
   );
 };
 

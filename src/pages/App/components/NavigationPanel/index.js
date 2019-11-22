@@ -16,9 +16,7 @@ S.Container = styled.nav(() => ({
 }));
 
 const NavigationPanel = ({ width, children }) => (
-  <S.Container width={width}>
-    {(Array.isArray(children) ? children : [children]).map(link => link)}
-  </S.Container>
+  <S.Container width={width}>{children}</S.Container>
 );
 
 NavigationPanel.propTypes = {

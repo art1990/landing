@@ -1,4 +1,4 @@
-/* ***colors*** */
+/* === colors === */
 
 export const colors = {
   lightPurple: "#5E239D",
@@ -26,7 +26,7 @@ export const colors = {
   info: "#00A8F0",
 };
 
-/* ***headers h1 h2 h3 h4 h5 h6*** */
+/* === headers h1 h2 h3 h4 h5 h6 === */
 
 const defaultStyles = {
   fontWeight: 500,
@@ -77,7 +77,7 @@ export const headers = {
   },
 };
 
-/* ***text*** */
+/* === text === */
 
 export const text = {
   small: {
@@ -122,7 +122,7 @@ export const text = {
   },
 };
 
-/* ***text misc*** */
+/* === text misc === */
 
 export const textMisc = {
   logo: {
@@ -196,7 +196,7 @@ export const quote = {
   },
 };
 
-/* ***shadows*** */
+/* === shadows === */
 
 export const shadow = {
   violet: { boxShadow: "0px 8px 64px rgba(94, 35, 157, 0.25)" },

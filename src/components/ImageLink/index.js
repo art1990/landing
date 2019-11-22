@@ -13,7 +13,7 @@ const Container = styled.a({
 
 const ImageLink = ({ link, img }) => (
   <Container href={link}>
-    <img src={img} alt="image link" />
+    <img src={img} alt="link" />
   </Container>
 );
 

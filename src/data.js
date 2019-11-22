@@ -4,13 +4,14 @@ import { colors } from "assets/styles/utils/vars";
 import avatar1 from "assets/img/avatarTestimonials/1.png";
 import avatar2 from "assets/img/avatarTestimonials/2.png";
 import avatar3 from "assets/img/avatarTestimonials/3.png";
-import avatar from "assets/img/avatarTestimonials/defaultFemale.png";
 import avatar4 from "assets/img/avatarTestimonials/4.png";
 import avatar5 from "assets/img/avatarTestimonials/5.png";
 import avatar6 from "assets/img/avatarTestimonials/6.png";
 import avatar7 from "assets/img/avatarTestimonials/7.png";
+
 import feMale from "assets/img/avatarTestimonials/defaultFemale.png";
 import male from "assets/img/avatarTestimonials/defaultMale.png";
+
 import photoAndrei from "assets/img/photoAndrei.png";
 //our team photo
 import photo1 from "assets/img/avatarTeam/photo1.png";
@@ -21,14 +22,19 @@ import photo5 from "assets/img/avatarTeam/photo5.png";
 import photo6 from "assets/img/avatarTeam/photo6.png";
 //icon
 import codepen from "assets/img/icon/social/codepan2.svg";
+import twitter2 from "assets/img/icon/social/twitter2.svg";
 import ball from "assets/img/icon/social/ball.svg";
-import twitter from "assets/img/icon/social/twitter2.svg";
 import ax from "assets/img/icon/skills icon/ax.svg";
 import brain from "assets/img/icon/skills icon/brain.svg";
 import libra from "assets/img/icon/skills icon/libra.svg";
 import reactIcon from "assets/img/icon/skills icon/reactIconLarge.svg";
 import skittle from "assets/img/icon/skills icon/skittle.svg";
 import tower from "assets/img/icon/skills icon/tower.svg";
+import twitter from "assets/img/icon/social/twiter.svg";
+import facebook from "assets/img/icon/social/facebook.svg";
+import instagram from "assets/img/icon/social/instagram.svg";
+import youtube from "assets/img/icon/social/youtube.svg";
+import m from "assets/img/icon/social/m.svg";
 //home photo
 import benefitsHome from "assets/img/benefitsHome.png";
 import benefitsApartament from "assets/img/benefitsApartament.png";
@@ -41,14 +47,30 @@ export const avatarArr = [
   avatar1,
   avatar2,
   avatar3,
-  avatar,
+  male,
   avatar4,
   avatar5,
   avatar6,
   avatar7,
 ];
 
-//home
+//Footer
+export const footerData = [
+  { menu: ["Home", "About", "Services", "News", "Gallery", "Contact"] },
+  { services: ["Lorem", "Ipsum", "Dolor", "Sit Amet"] },
+  { "contact us": ["contact@lop.com", "856-693-456"] },
+  {
+    "follow us": [
+      [twitter, "https://twitter.com/?lang=ru"],
+      [facebook, "https://www.facebook.com/"],
+      [instagram, "https://www.instagram.com/?hl=ru"],
+      [youtube, "https://www.youtube.com/"],
+      [m, "https://www.youtube.com/"],
+    ],
+  },
+];
+
+//Home page
 export const articlesHomePage = [
   {
     heading: "Webdesign",
@@ -141,7 +163,7 @@ export const cards = [
   },
 ];
 
-//Services
+//Services page
 export const awardsArr = [
   { count: "15+", name: "nobel prizes", color: colors.primary },
   { count: "33", name: "nobel prizes", color: colors.lightPurple },
@@ -217,7 +239,7 @@ export const workplace = {
   ],
 };
 
-//Team
+//Team page
 export const personArr = [
   {
     img: photo1,
@@ -311,7 +333,7 @@ export const quote = [
 ];
 
 export const socialIcon = {
-  twitter,
+  twitter: twitter2,
   ball,
   codepen,
 };

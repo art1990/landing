@@ -1,14 +1,14 @@
 //react
 import React from "react";
+import PropTypes from "prop-types";
 //components
 import CustomLink from "components/CustomLink";
 //assets
 import { S } from "pages/App/components/Footer/styles";
 import { textMisc } from "assets/styles/utils/vars";
-import { footerData } from "pages/App/utils/data";
 import ImageLink from "components/ImageLink";
 
-const Footer = () => (
+const Footer = ({ footerData }) => (
   <S.Container>
     <S.Content>
       <CustomLink linkStyles={textMisc.logo} to="/">
@@ -54,6 +54,8 @@ const Footer = () => (
   </S.Container>
 );
 
-Footer.propTypes = {};
+Footer.propTypes = {
+  footerData: PropTypes.array,
+};
 
 export default Footer;

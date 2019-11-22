@@ -15,11 +15,9 @@ const Menu = ({ children, color }) => {
         ))}
       </S.Button>
       <S.List isOpen={isOpen} onClick={() => setIsOpen(false)}>
-        {(Array.isArray(children) ? children : [children]).map(
-          (link, index) => (
-            <li key={index}>{link}</li>
-          ),
-        )}
+        {React.Children.map(children, (link, index) => (
+          <li key={index}>{link}</li>
+        ))}
       </S.List>
     </S.Container>
   );

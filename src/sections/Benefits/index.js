@@ -17,7 +17,7 @@ const Benefits = ({ title, heading, text = {}, imgArr }) => {
         <S.Button>learn more</S.Button>
       </S.TextSection>
       <S.PhotoSection>
-        <img src={imgArr[0]} alt="photo home" />
+        <img src={imgArr[0]} alt="home" />
         <S.LastPhoto src={imgArr[1]} alt="photo apartament" />
       </S.PhotoSection>
     </S.Container>

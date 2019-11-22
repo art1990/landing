@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Quote = ({ className, quoteText, photo, author, company }) => (
   <figure className={className}>
     <blockquote>{quoteText}</blockquote>
-    {photo && <img src={photo} alt="photo author" />}
+    {photo && <img src={photo} alt="author" />}
     <figcaption>
       {author} - <span>{company}</span>
     </figcaption>
