@@ -9,14 +9,15 @@ const S = {};
 
 S.Button = styled.button({
   ...textMisc.button,
+
   height: "45px",
   padding: "0 40px",
+  boxSizing: "border-box",
+  border: "2px solid transparent",
+  borderRadius: "36px",
   color: colors.white,
   background: colors.primary,
-  borderRadius: "36px",
   cursor: "pointer",
-  border: "2px solid transparent",
-  boxSizing: "border-box",
 
   "&:hover": {
     background:

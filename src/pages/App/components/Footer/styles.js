@@ -36,12 +36,12 @@ S.SectionTitle = styled.span({
 
   ":before": {
     content: "''",
+    position: "absolute",
+    left: "0",
+    bottom: "-30%",
     width: "95%",
     height: "1px",
     backgroundColor: colors.primary,
-    position: "absolute",
-    bottom: "-30%",
-    left: "0",
   },
 });
 

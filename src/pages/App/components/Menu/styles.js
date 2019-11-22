@@ -14,7 +14,7 @@ S.Container = styled.div(({ color, width, isOpen }) => ({
 
   width: width + "px" || "auto",
   paddingTop: "5px",
-  boxShadow: isOpen ? "2px 2px 4px 4px grey" : "none",
+  boxShadow: isOpen ? "2px 2px 4px 4px #a7a7a7" : "none",
   transition: "box-shadow .3s",
 
   "& a": { color: color || colors.white },
@@ -55,7 +55,7 @@ S.List = styled.ul(({ isOpen }) => ({
 
   position: "absolute",
   right: "0px",
-  top: "20px",
+  top: "25px",
 
   width: "max-content",
   padding: "0",

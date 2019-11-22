@@ -16,6 +16,7 @@ S.Container = styled.div(({ backgroundColor, padding }) => ({
   zIndex: "1",
   top: "0px",
   left: "0px",
+
   width: "100%",
   padding: padding || "20px 0",
   backgroundColor: backgroundColor || "transparent",
@@ -25,9 +26,10 @@ S.Container = styled.div(({ backgroundColor, padding }) => ({
 
 S.LinkSection = styled.div({
   display: "flex",
+  justifyContent: "space-between",
+
   width: "100%",
   maxWidth: "390px",
-  justifyContent: "space-between",
 });
 
 const Header = ({
