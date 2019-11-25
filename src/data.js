@@ -315,11 +315,19 @@ export const quote = [
       "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
     author: "Andrew Slomka",
     company: "Some Company",
+    photo: male,
   },
   {
     quoteText:
       "Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing tristique y.",
     author: "Kerry Johnes",
+    company: "Some Company",
+    photo: feMale,
+  },
+  {
+    quoteText:
+      "Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing tristique 123.",
+    author: "Key Johnes",
     company: "Some Company",
     photo: male,
   },
@@ -327,6 +335,20 @@ export const quote = [
     quoteText:
       "Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing tristique 123.",
     author: "Key Johnes",
+    company: "Some Company",
+    photo: feMale,
+  },
+  {
+    quoteText:
+      "Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing tristique 123.",
+    author: "Key Johnes",
+    company: "Some Company",
+    photo: male,
+  },
+  {
+    quoteText:
+      "Lectus arcu bibendum at varius. Adipiscing diam donec adipiscing tristique y.",
+    author: "Kerry Johnes",
     company: "Some Company",
     photo: feMale,
   },

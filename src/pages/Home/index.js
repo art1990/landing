@@ -50,7 +50,7 @@ const imgLinkArr = new Array(6)
   ));
 
 const Home = () => {
-  const [serviceSectionPosition, setServiceSectionPosition] = useState(null);
+  const [serviceContainerRef, setServiceContainerRef] = useState(null);
   const title = <div style={textMisc.titleMedium}>What we do?</div>;
 
   const heading = (
@@ -68,7 +68,7 @@ const Home = () => {
         isBackgroundLinearGradient
         scroll="Scroll to see more"
         button="Velit laoreet id donec ultrices. Ut lectus arcu bibendum varius."
-        serviceSectionPosition={serviceSectionPosition}
+        serviceContainerRef={serviceContainerRef}
       />
       <OurServices
         title="What we can do?"
@@ -76,7 +76,7 @@ const Home = () => {
         articles={articlesHomePage}
         quote={quoteHomePage}
         paddingTop={170}
-        setServiceSectionPosition={setServiceSectionPosition}
+        setServiceContainerRef={setServiceContainerRef}
       />
       <Benefits
         title="Benefits"

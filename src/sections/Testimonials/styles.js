@@ -64,17 +64,6 @@ S.LastColumn = styled.div({
   },
 });
 
-S.GeneralAvatar = styled.div({
-  display: "flex",
-  flexDirection: "column",
-  marginTop: "-125px",
-
-  "& :last-child": {
-    position: "relative",
-    margin: "-8% 0 10px 0",
-  },
-});
-
 S.QuoteContainer = styled.div({
   display: "flex",
   maxWidth: "1150px",

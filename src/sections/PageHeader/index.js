@@ -16,12 +16,16 @@ const PageHeader = ({
   scroll,
   button,
   isBackgroundLinearGradient,
-  serviceSectionPosition,
+  serviceContainerRef,
 }) => {
   const scrollDown = useCallback(() => {
-    serviceSectionPosition &&
-      window.scrollTo({ top: serviceSectionPosition.top, behavior: "smooth" });
-  }, [serviceSectionPosition]);
+    const { top } =
+      serviceContainerRef && serviceContainerRef.getBoundingClientRect();
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
+  }, [serviceContainerRef]);
 
   return (
     <S.Container
@@ -62,7 +66,7 @@ PageHeader.propTypes = {
   scroll: PropTypes.string,
   button: PropTypes.string,
   isBackgroundLinearGradient: PropTypes.bool,
-  serviceSectionPosition: PropTypes.object,
+  serviceContainerRef: PropTypes.object,
 };
 
 export default PageHeader;

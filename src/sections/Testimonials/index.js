@@ -4,15 +4,15 @@ import PropTypes from "prop-types";
 //components
 import IconButton from "components/IconButton";
 import Quote from "components/Quote";
+import AvatarSlider from "components/AvatarSlider";
 //assets
 import { S } from "sections/Testimonials/styles";
 import { avatarArr } from "data";
 import { shadow } from "assets/styles/utils/vars";
-import quotes from "assets/img/icon/quotes.svg";
 
 const Testimonials = ({ quote }) => {
-  const [quoteNum, setQuoteNum] = useState(1);
-  const { quoteText, author, company, photo } = quote[quoteNum];
+  const [quoteNum, setQuoteNum] = useState(0);
+  const { quoteText, author, company } = quote[quoteNum];
 
   const avatarDataArr = useMemo(() => {
     const { pink, violet, green } = shadow;
@@ -33,10 +33,7 @@ const Testimonials = ({ quote }) => {
       <S.AvatarsSection>
         {avatarDataArr.map(({ avatar, size, shadow }, i, arr) => {
           return i === 3 ? (
-            <S.GeneralAvatar key={"general" + i}>
-              <img key={i} src={photo} alt="avatar" />
-              <img key={"span" + i} src={quotes} alt="quotes" />
-            </S.GeneralAvatar>
+            <AvatarSlider key={i} avatarNum={quoteNum + 1} quote={quote} />
           ) : i === 6 ? (
             <S.LastColumn key={"container" + i}>
               <img key={i} src={avatar} style={shadow} alt="avatar" />
@@ -57,14 +54,18 @@ const Testimonials = ({ quote }) => {
           <IconButton
             isIcon
             rotate={180}
-            onClick={() =>
-              setQuoteNum(quoteNum - 1 === 0 ? quote.length - 1 : quoteNum - 1)
-            }
+            onClick={() => {
+              if (quoteNum === 0) return;
+              setQuoteNum(quoteNum - 1);
+            }}
           />
           <Quote quoteText={quoteText} author={author} company={company} />
           <IconButton
             isIcon
-            onClick={() => setQuoteNum((quoteNum + 1) % quote.length || 1)}
+            onClick={() => {
+              if (quoteNum + 1 === quote.length) return;
+              setQuoteNum(quoteNum + 1);
+            }}
           />
         </S.QuoteAndButtons>
       </S.QuoteContainer>

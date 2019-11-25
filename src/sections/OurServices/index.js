@@ -15,19 +15,22 @@ const OurServices = ({
   quote,
   titleMaxWidth,
   paddingTop,
-  setServiceSectionPosition,
+  setServiceContainerRef,
 }) => {
-  let position;
   const { quoteText, photo, author, company } = quote ? quote[0] : {};
 
-  const getRef = e => e && (position = e.getBoundingClientRect());
+  const containerRef = React.createRef();
 
   useEffect(() => {
-    setServiceSectionPosition && setServiceSectionPosition(position);
-  }, [position, setServiceSectionPosition]);
+    setServiceContainerRef && setServiceContainerRef(containerRef.current);
+  }, []);
 
   return (
-    <S.Container paddingTop={paddingTop} ref={getRef} className={className}>
+    <S.Container
+      paddingTop={paddingTop}
+      ref={containerRef}
+      className={className}
+    >
       <S.Title
         title={title}
         heading={heading}
@@ -67,7 +70,7 @@ OurServices.propTypes = {
   quote: PropTypes.array,
   titleMaxWidth: PropTypes.string,
   paddingTop: PropTypes.number,
-  setServiceSectionPosition: PropTypes.func,
+  setServiceContainerRef: PropTypes.func,
 };
 
 export default OurServices;
