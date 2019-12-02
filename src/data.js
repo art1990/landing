@@ -20,7 +20,7 @@ import photo3 from "assets/img/avatarTeam/photo3.png";
 import photo4 from "assets/img/avatarTeam/photo4.png";
 import photo5 from "assets/img/avatarTeam/photo5.png";
 import photo6 from "assets/img/avatarTeam/photo6.png";
-//icon
+//social icon
 import codepen from "assets/img/icon/social/codepan2.svg";
 import twitter2 from "assets/img/icon/social/twitter2.svg";
 import ball from "assets/img/icon/social/ball.svg";
